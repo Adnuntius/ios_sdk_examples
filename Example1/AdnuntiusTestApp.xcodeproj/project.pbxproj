@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		195033821E470739009E6F1C /* FeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195033811E470739009E6F1C /* FeedParser.swift */; };
-		39519426213AFD7D008F961C /* AdnuntiusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39519425213AFD7D008F961C /* AdnuntiusSDK.framework */; };
-		39519428213AFD82008F961C /* AdnuntiusSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39519425213AFD7D008F961C /* AdnuntiusSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A71D2C7822DC89E70031E05B /* AdnuntiusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71D2C7722DC89E70031E05B /* AdnuntiusSDK.framework */; };
+		A71D2C7922DC89E70031E05B /* AdnuntiusSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A71D2C7722DC89E70031E05B /* AdnuntiusSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F46F13CF1A8E0A6E00EEB477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F13CE1A8E0A6E00EEB477 /* AppDelegate.swift */; };
 		F46F13D41A8E0A6E00EEB477 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46F13D21A8E0A6E00EEB477 /* Main.storyboard */; };
 		F46F13D61A8E0A6E00EEB477 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46F13D51A8E0A6E00EEB477 /* Images.xcassets */; };
@@ -35,7 +35,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				39519428213AFD82008F961C /* AdnuntiusSDK.framework in Embed Frameworks */,
+				A71D2C7922DC89E70031E05B /* AdnuntiusSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,7 +44,7 @@
 
 /* Begin PBXFileReference section */
 		195033811E470739009E6F1C /* FeedParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
-		39519425213AFD7D008F961C /* AdnuntiusSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdnuntiusSDK.framework; sourceTree = "<group>"; };
+		A71D2C7722DC89E70031E05B /* AdnuntiusSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdnuntiusSDK.framework; path = Carthage/Build/iOS/AdnuntiusSDK.framework; sourceTree = "<group>"; };
 		F46F13C91A8E0A6E00EEB477 /* AdnuntiusTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdnuntiusTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46F13CD1A8E0A6E00EEB477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F46F13CE1A8E0A6E00EEB477 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39519426213AFD7D008F961C /* AdnuntiusSDK.framework in Frameworks */,
+				A71D2C7822DC89E70031E05B /* AdnuntiusSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +96,7 @@
 		F46F13C01A8E0A6E00EEB477 = {
 			isa = PBXGroup;
 			children = (
-				39519425213AFD7D008F961C /* AdnuntiusSDK.framework */,
+				A71D2C7722DC89E70031E05B /* AdnuntiusSDK.framework */,
 				F46F13CB1A8E0A6E00EEB477 /* AdnuntiusTestApp */,
 				F46F13CA1A8E0A6E00EEB477 /* Products */,
 			);
@@ -198,6 +198,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -390,6 +391,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AdnuntiusTestApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -409,6 +411,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AdnuntiusTestApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
