@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		195033821E470739009E6F1C /* FeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195033811E470739009E6F1C /* FeedParser.swift */; };
-		A71D2C7822DC89E70031E05B /* AdnuntiusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71D2C7722DC89E70031E05B /* AdnuntiusSDK.framework */; };
-		A71D2C7922DC89E70031E05B /* AdnuntiusSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A71D2C7722DC89E70031E05B /* AdnuntiusSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A7C8FF7E22E005B400EBDF3A /* AdnuntiusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71D2C7722DC89E70031E05B /* AdnuntiusSDK.framework */; };
 		F46F13CF1A8E0A6E00EEB477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F13CE1A8E0A6E00EEB477 /* AppDelegate.swift */; };
 		F46F13D41A8E0A6E00EEB477 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46F13D21A8E0A6E00EEB477 /* Main.storyboard */; };
 		F46F13D61A8E0A6E00EEB477 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46F13D51A8E0A6E00EEB477 /* Images.xcassets */; };
@@ -17,30 +16,6 @@
 		F46F13EF1A8E11A900EEB477 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F13EE1A8E11A900EEB477 /* NewsTableViewController.swift */; };
 		F46F13F11A8E11BA00EEB477 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F13F01A8E11BA00EEB477 /* NewsTableViewCell.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		F46F13DF1A8E0A6F00EEB477 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F46F13C11A8E0A6E00EEB477 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F46F13C81A8E0A6E00EEB477;
-			remoteInfo = SimpleRSSReader;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		39519429213AFD82008F961C /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A71D2C7922DC89E70031E05B /* AdnuntiusSDK.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		195033811E470739009E6F1C /* FeedParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
@@ -51,7 +26,6 @@
 		F46F13D31A8E0A6E00EEB477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F46F13D51A8E0A6E00EEB477 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F46F13D81A8E0A6E00EEB477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		F46F13DE1A8E0A6F00EEB477 /* AdnuntiusTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdnuntiusTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46F13EE1A8E11A900EEB477 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		F46F13F01A8E11BA00EEB477 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,14 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A71D2C7822DC89E70031E05B /* AdnuntiusSDK.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F46F13DB1A8E0A6F00EEB477 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				A7C8FF7E22E005B400EBDF3A /* AdnuntiusSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,12 +60,20 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		A7C8FF7D22E005B400EBDF3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F46F13C01A8E0A6E00EEB477 = {
 			isa = PBXGroup;
 			children = (
 				A71D2C7722DC89E70031E05B /* AdnuntiusSDK.framework */,
 				F46F13CB1A8E0A6E00EEB477 /* AdnuntiusTestApp */,
 				F46F13CA1A8E0A6E00EEB477 /* Products */,
+				A7C8FF7D22E005B400EBDF3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				F46F13C91A8E0A6E00EEB477 /* AdnuntiusTestApp.app */,
-				F46F13DE1A8E0A6F00EEB477 /* AdnuntiusTestAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,9 +114,9 @@
 			buildConfigurationList = F46F13E81A8E0A6F00EEB477 /* Build configuration list for PBXNativeTarget "AdnuntiusTestApp" */;
 			buildPhases = (
 				F46F13C51A8E0A6E00EEB477 /* Sources */,
+				A7C8FF7F22E0064800EBDF3A /* ShellScript */,
 				F46F13C61A8E0A6E00EEB477 /* Frameworks */,
 				F46F13C71A8E0A6E00EEB477 /* Resources */,
-				39519429213AFD82008F961C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,24 +126,6 @@
 			productName = SimpleRSSReader;
 			productReference = F46F13C91A8E0A6E00EEB477 /* AdnuntiusTestApp.app */;
 			productType = "com.apple.product-type.application";
-		};
-		F46F13DD1A8E0A6F00EEB477 /* AdnuntiusTestAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F46F13EB1A8E0A6F00EEB477 /* Build configuration list for PBXNativeTarget "AdnuntiusTestAppTests" */;
-			buildPhases = (
-				F46F13DA1A8E0A6F00EEB477 /* Sources */,
-				F46F13DB1A8E0A6F00EEB477 /* Frameworks */,
-				F46F13DC1A8E0A6F00EEB477 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F46F13E01A8E0A6F00EEB477 /* PBXTargetDependency */,
-			);
-			name = AdnuntiusTestAppTests;
-			productName = SimpleRSSReaderTests;
-			productReference = F46F13DE1A8E0A6F00EEB477 /* AdnuntiusTestAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -183,13 +139,8 @@
 				TargetAttributes = {
 					F46F13C81A8E0A6E00EEB477 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = DG59465FT9;
+						DevelopmentTeam = 5S8YF53WP2;
 						LastSwiftMigration = 0900;
-					};
-					F46F13DD1A8E0A6F00EEB477 = {
-						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 0900;
-						TestTargetID = F46F13C81A8E0A6E00EEB477;
 					};
 				};
 			};
@@ -208,7 +159,6 @@
 			projectRoot = "";
 			targets = (
 				F46F13C81A8E0A6E00EEB477 /* AdnuntiusTestApp */,
-				F46F13DD1A8E0A6F00EEB477 /* AdnuntiusTestAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -224,14 +174,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F46F13DC1A8E0A6F00EEB477 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A7C8FF7F22E0064800EBDF3A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AdnuntiusSDK.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
-/* End PBXResourcesBuildPhase section */
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F46F13C51A8E0A6E00EEB477 /* Sources */ = {
@@ -245,22 +209,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F46F13DA1A8E0A6F00EEB477 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F46F13E01A8E0A6F00EEB477 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F46F13C81A8E0A6E00EEB477 /* AdnuntiusTestApp */;
-			targetProxy = F46F13DF1A8E0A6F00EEB477 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F46F13D21A8E0A6E00EEB477 /* Main.storyboard */ = {
@@ -328,7 +277,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -375,7 +324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -387,19 +336,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DG59465FT9;
+				DEVELOPMENT_TEAM = 5S8YF53WP2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AdnuntiusTestApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = Adnuntius.AdnuntiusTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -407,59 +357,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DG59465FT9;
+				DEVELOPMENT_TEAM = 5S8YF53WP2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AdnuntiusTestApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = Adnuntius.AdnuntiusTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
-			};
-			name = Release;
-		};
-		F46F13EC1A8E0A6F00EEB477 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SimpleRSSReaderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdnuntiusTestApp.app/AdnuntiusTestApp";
-			};
-			name = Debug;
-		};
-		F46F13ED1A8E0A6F00EEB477 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SimpleRSSReaderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdnuntiusTestApp.app/AdnuntiusTestApp";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -480,15 +391,6 @@
 			buildConfigurations = (
 				F46F13E91A8E0A6F00EEB477 /* Debug */,
 				F46F13EA1A8E0A6F00EEB477 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F46F13EB1A8E0A6F00EEB477 /* Build configuration list for PBXNativeTarget "AdnuntiusTestAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F46F13EC1A8E0A6F00EEB477 /* Debug */,
-				F46F13ED1A8E0A6F00EEB477 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
