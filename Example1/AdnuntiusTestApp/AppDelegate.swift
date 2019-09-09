@@ -14,10 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    AdnuntiusSDK.config = ["siteId": "1131763067966473843",
+    AdnuntiusSDK.config = [//"siteId": "1131763067966473843",
                            "adUnits": [
-                            ["auId": "0000000000000fe6", "c": ["sports"]],
-                                        ["auId": "0000000000000fe6", "c": ["sports"]]]]
+                                ["auId": "0000000000023ae5", "c": ["sports"]
+                            ]
+                        ]
+                    ]
     /*AdnuntiusSDK.adScript =
     """
         <html>
