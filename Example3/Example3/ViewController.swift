@@ -2,45 +2,73 @@
 //  ViewController.swift
 //  Example3
 //
-//  Created by Mateusz Grzywa on 01/07/2019.
 //  Copyright © 2019 Adnuntius. All rights reserved.
 //
 
 import UIKit
 import AdnuntiusSDK
 
-class ViewController: UIViewController, UIWebViewDelegate {
-
+class ViewController: UIViewController, AdLoadCompletionHandler {
     @IBOutlet weak var adView: AdnuntiusAdWebView!
-    
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
-        // Define a behaviour that will happen when an ad is clicked
-        guard let url = request.url, navigationType == .linkClicked else { return true }
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url)
-        } else {
-            UIApplication.shared.openURL(url)
-        }
-        return false
-    }
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        // Detect if an ad is not present
-        let html = webView.stringByEvaluatingJavaScript(from: "document.body.innerHTML")
-        if let page = html {
-            if !page.contains("<iframe") {
-                // Ad is not present
-                // Do any behaviour that you want to hide an ad
-                // Ex. self.adView.isHidden = true
-            }
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.adView.delegate = self
-        // Do any additional setup after loading the view.
-    }
 
+    fileprivate func promptToLoadScript() {
+        let dialogMessage = UIAlertController(title: "Confirm", message: "Do you want to release the Ads?", preferredStyle: .alert)
+        
+        // Create OK button with action handler
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            print("Ok button tapped")
+            self.loadFromScript()
+        })
+        
+        // Create Cancel button with action handlder
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+            print("Cancel button tapped")
+        }
+        
+        //Add OK and Cancel button to dialog message
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
+        
+        // Present dialog message to user
+        self.present(dialogMessage, animated: true, completion: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
+        // Declare Alert message this is just so we can attach the browser debugger
+        // stupid apple, android studio has the ability to wait for the app to start before starting the debugger, pity
+        // you can't do the same here apple!
+        // promptToLoadScript()
+        
+        self.loadFromScript()
+    }
+    
+    private func loadFromScript() {
+        adView.loadFromScript("""
+        <html>
+        <script type="text/javascript" src="https://cdn.adnuntius.com/adn.js" async></script>
+        <body>
+        <div id="adn-000000000006f450" style="display:none"></div>
+        <script type="text/javascript">
+            window.adn = window.adn || {}; adn.calls = adn.calls || [];
+              adn.calls.push(function() {
+                adn.request({ adUnits: [
+                    {auId: '000000000006f450', auW: 300, auH: 200, kv: [{'version':'X'}] }
+                ]});
+            });
+        </script>   
+        </body>
+        </html>
+        """, completionHandler: self)
+    }
+    
+    func onComplete(_ view: AdnuntiusAdWebView, _ adCount: Int) {
+        print("Completed: " + String(adCount))
+    }
+    
+    func onFailure(_ view: AdnuntiusAdWebView, _ message: String) {
+        view.loadHTMLString("<h1>Error is: " + message + "</h1>",
+        baseURL: nil)
+    }
 }
-

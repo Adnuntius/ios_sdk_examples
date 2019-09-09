@@ -7,8 +7,8 @@
 import UIKit
 import AdnuntiusSDK
 
-class NewsTableViewController: UITableViewController, UIWebViewDelegate {
-  
+class NewsTableViewController: UITableViewController, AdLoadCompletionHandler {
+    
   fileprivate let feedParser = FeedParser()
   fileprivate let feedURL = "http://www.apple.com/main/rss/hotnews/hotnews.rss"
   
@@ -17,10 +17,9 @@ class NewsTableViewController: UITableViewController, UIWebViewDelegate {
     
   fileprivate var adViews: [AdnuntiusAdWebView] = [AdnuntiusAdWebView]()
 
-    
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     tableView.estimatedRowHeight = UITableView.automaticDimension
     tableView.rowHeight = UITableView.automaticDimension
     
@@ -34,11 +33,36 @@ class NewsTableViewController: UITableViewController, UIWebViewDelegate {
         self?.tableView.reloadSections(IndexSet(integer: 0), with: .none)
       }
     }
-    adViews.append(AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 0)))
-    adViews.append(AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 0)))
+        
+    let adView1 = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 0))
+    adView1.loadFromApi([
+           "adUnits": [
+            ["auId": "000000000006f450", "kv": [["version": "6s"]]
+            ]
+        ]
+        ], completionHandler: self)
+    
+    let adView2 = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 0))
+    adView2.loadFromApi([
+           "adUnits": [
+            ["auId": "000000000006f450", "kv": [["version":"X"]]
+            ]
+        ]
+        ], completionHandler: self)
+    adViews.append(adView1)
+    adViews.append(adView2)
   }
   
-  // MARK: - Table view data source
+  func onComplete(_ view: AdnuntiusAdWebView, _ adCount: Int) {
+    print("Complete: " + String(adCount))
+    if (adCount == 0) {
+        // TODO - what to do if no ad
+    }
+  }
+
+  func onFailure(_ view: AdnuntiusAdWebView, _ message: String) {
+    print("Failure: " + message)
+  }
   
   override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
@@ -50,31 +74,22 @@ class NewsTableViewController: UITableViewController, UIWebViewDelegate {
     }
     return rssItems.count
   }
+
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     if(indexPath.row % 7 == 0) {
-        print(self.adViews[0].frame.height)
+        //print(self.adViews[0].frame.height)
         return self.adViews[indexPath.row % 2 == 0 ? 0 : 1].frame.height
     }
     return UITableView.automaticDimension
   }
-    /*
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
-        if navigationType == UIWebView.NavigationType.linkClicked
-            || request.url!.absoluteString.contains("adform.net"){
-            UIApplication.shared.openURL(request.url!)
-            return false
-        }
-        return true
-    }*/
+
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     // Adnuntius injector
     if (indexPath.row % 7 == 0) {
         let cell = UITableViewCell()
         let webView = self.adViews[indexPath.row % 2 == 0 ? 0 : 1]
-        webView.delegate = self
         webView.scalesPageToFit = true
         webView.scrollView.isScrollEnabled = false
-        
         
         cell.clipsToBounds = true
         cell.addSubview(webView)
@@ -90,6 +105,7 @@ class NewsTableViewController: UITableViewController, UIWebViewDelegate {
 
         return cell
     }
+    
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! NewsTableViewCell
     
     if let item = rssItems?[indexPath.row] {

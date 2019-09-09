@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		195033821E470739009E6F1C /* FeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195033811E470739009E6F1C /* FeedParser.swift */; };
-		A7C8FF7E22E005B400EBDF3A /* AdnuntiusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71D2C7722DC89E70031E05B /* AdnuntiusSDK.framework */; };
+		A7B2D23F235827160090B0FA /* AdnuntiusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B2D23E235827160090B0FA /* AdnuntiusSDK.framework */; };
 		F46F13CF1A8E0A6E00EEB477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F13CE1A8E0A6E00EEB477 /* AppDelegate.swift */; };
 		F46F13D41A8E0A6E00EEB477 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46F13D21A8E0A6E00EEB477 /* Main.storyboard */; };
 		F46F13D61A8E0A6E00EEB477 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46F13D51A8E0A6E00EEB477 /* Images.xcassets */; };
@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		195033811E470739009E6F1C /* FeedParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
-		A71D2C7722DC89E70031E05B /* AdnuntiusSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdnuntiusSDK.framework; path = Carthage/Build/iOS/AdnuntiusSDK.framework; sourceTree = "<group>"; };
+		A7B2D23E235827160090B0FA /* AdnuntiusSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdnuntiusSDK.framework; path = Carthage/Build/iOS/AdnuntiusSDK.framework; sourceTree = "<group>"; };
 		F46F13C91A8E0A6E00EEB477 /* AdnuntiusTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdnuntiusTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46F13CD1A8E0A6E00EEB477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F46F13CE1A8E0A6E00EEB477 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7C8FF7E22E005B400EBDF3A /* AdnuntiusSDK.framework in Frameworks */,
+				A7B2D23F235827160090B0FA /* AdnuntiusSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +63,7 @@
 		A7C8FF7D22E005B400EBDF3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7B2D23E235827160090B0FA /* AdnuntiusSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -70,7 +71,6 @@
 		F46F13C01A8E0A6E00EEB477 = {
 			isa = PBXGroup;
 			children = (
-				A71D2C7722DC89E70031E05B /* AdnuntiusSDK.framework */,
 				F46F13CB1A8E0A6E00EEB477 /* AdnuntiusTestApp */,
 				F46F13CA1A8E0A6E00EEB477 /* Products */,
 				A7C8FF7D22E005B400EBDF3A /* Frameworks */,
@@ -135,7 +135,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = AppCoda;
+				ORGANIZATIONNAME = Adnuntius;
 				TargetAttributes = {
 					F46F13C81A8E0A6E00EEB477 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -343,7 +343,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AdnuntiusTestApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Adnuntius.AdnuntiusTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -364,7 +364,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AdnuntiusTestApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Adnuntius.AdnuntiusTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

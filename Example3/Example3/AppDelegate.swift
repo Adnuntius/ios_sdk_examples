@@ -2,32 +2,15 @@
 //  AppDelegate.swift
 //  Example3
 //
-//  Created by Mateusz Grzywa on 01/07/2019.
-//  Copyright © 2019 Adnuntius. All rights reserved.
-//
 
 import UIKit
-import AdnuntiusSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        AdnuntiusSDK.adScript =
-        """
-        <html>
-        <head />
-        <body>
-        <div id="adn-0000000000023ae5" style="display:none"></div>
-        <script type="text/javascript">(function(d, s, e, t) { e = d.createElement(s); e.type = 'text/java' + s; e.async = 'async'; e.src = 'https://cdn.adnuntius.com/adn.js'; t = d.getElementsByTagName(s)[0]; t.parentNode.insertBefore(e, t); })(document, 'script');window.adn = window.adn || {}; adn.calls = adn.calls || []; adn.calls.push(function() { adn.request({ adUnits: [ {auId: '0000000000023ae5', auW: 300, auH: 250 } ]}); });</script>
-        </body>
-        </html>
-        """
-        
         return true
     }
 
@@ -52,7 +35,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
-
