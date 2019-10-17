@@ -5,33 +5,14 @@
 //
 
 import UIKit
-import AdnuntiusSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-  
-  var window: UIWindow?
+   var window: UIWindow?
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
-    AdnuntiusSDK.config = [//"siteId": "1131763067966473843",
-                           "adUnits": [
-                                ["auId": "0000000000023ae5", "c": ["sports"]
-                            ]
-                        ]
-                    ]
-    /*AdnuntiusSDK.adScript =
-    """
-        <html>
-        <head />
-        <body>
-        <div id="adn-0000000000000fe6" style="display:none"></div>
-        <script type="text/javascript">(function(d, s, e, t) { e = d.createElement(s); e.type = 'text/java' + s; e.async = 'async'; e.src = 'http' + ('https:' === location.protocol ? 's' : '') + '://cdn.adnuntius.com/adn.js'; t = d.getElementsByTagName(s)[0]; t.parentNode.insertBefore(e, t); })(document, 'script');window.adn = window.adn || {}; adn.calls = adn.calls || []; adn.calls.push(function() { adn.request({ adUnits: [ {auId: '0000000000000fe6', auW: 320, auH: 480 } ]}); });</script>
-        </body>
-        </html>
-    """*/
     return true
-  }//000000000002c4cc
+  }
   
   func applicationWillResignActive(_ application: UIApplication) {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -54,7 +35,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
-  
-  
 }
-

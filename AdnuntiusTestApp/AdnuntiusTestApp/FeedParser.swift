@@ -42,7 +42,7 @@ class FeedParser: NSObject, XMLParserDelegate {
     
     URLSession.shared.dataTask(with: feedURL, completionHandler: { data, response, error in
       if let error = error {
-        print(error)
+        print("Error: " + error.localizedDescription)
         return
       }
       
@@ -98,6 +98,6 @@ class FeedParser: NSObject, XMLParserDelegate {
   }
   
   func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
-    print(parseError.localizedDescription)
+    print("Parse Error: " + parseError.localizedDescription)
   }
 }

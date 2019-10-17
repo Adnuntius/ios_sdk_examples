@@ -11,7 +11,7 @@
 		39AE9A2822C969D90082841E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AE9A2722C969D90082841E /* ViewController.swift */; };
 		39AE9A2B22C969D90082841E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39AE9A2922C969D90082841E /* Main.storyboard */; };
 		39AE9A2D22C969D90082841E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39AE9A2C22C969D90082841E /* Assets.xcassets */; };
-		A7C8FF7822DFFF3B00EBDF3A /* AdnuntiusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71D2C7A22DC8B940031E05B /* AdnuntiusSDK.framework */; };
+		A7B2D244235829080090B0FA /* AdnuntiusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B2D243235829080090B0FA /* AdnuntiusSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		39AE9A2A22C969D90082841E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39AE9A2C22C969D90082841E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39AE9A3122C969D90082841E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A71D2C7A22DC8B940031E05B /* AdnuntiusSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdnuntiusSDK.framework; path = Carthage/Build/iOS/AdnuntiusSDK.framework; sourceTree = "<group>"; };
+		A7B2D243235829080090B0FA /* AdnuntiusSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdnuntiusSDK.framework; path = Carthage/Build/iOS/AdnuntiusSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,7 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7C8FF7822DFFF3B00EBDF3A /* AdnuntiusSDK.framework in Frameworks */,
+				A7B2D244235829080090B0FA /* AdnuntiusSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,7 +39,6 @@
 		39AE9A1922C969D90082841E = {
 			isa = PBXGroup;
 			children = (
-				A71D2C7A22DC8B940031E05B /* AdnuntiusSDK.framework */,
 				39AE9A2422C969D90082841E /* Example3 */,
 				39AE9A2322C969D90082841E /* Products */,
 				A7C8FF7722DFFF3B00EBDF3A /* Frameworks */,
@@ -69,6 +68,7 @@
 		A7C8FF7722DFFF3B00EBDF3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7B2D243235829080090B0FA /* AdnuntiusSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
