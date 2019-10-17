@@ -1,1 +1,1 @@
-github "Adnuntius/ios_sdk" "jp_objective_c"
+github "Adnuntius/ios_sdk" ~> 1.2.0
