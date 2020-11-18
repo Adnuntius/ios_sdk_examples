@@ -5,4 +5,6 @@
 
 @property (weak, nonatomic) IBOutlet AdnuntiusAdWebView *adView;
 
+- (void)loadFromScript;
+- (void)promptToLoadScript;
 @end

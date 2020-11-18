@@ -14,22 +14,18 @@ class ViewController: UIViewController, AdLoadCompletionHandler {
     fileprivate func promptToLoadScript() {
         let dialogMessage = UIAlertController(title: "Confirm", message: "Do you want to release the Ads?", preferredStyle: .alert)
         
-        // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
             print("Ok button tapped")
             self.loadFromScript()
         })
         
-        // Create Cancel button with action handlder
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
             print("Cancel button tapped")
         }
         
-        //Add OK and Cancel button to dialog message
         dialogMessage.addAction(ok)
         dialogMessage.addAction(cancel)
         
-        // Present dialog message to user
         self.present(dialogMessage, animated: true, completion: nil)
     }
     
