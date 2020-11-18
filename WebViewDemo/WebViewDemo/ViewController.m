@@ -8,26 +8,27 @@
     //AdConfig *config = [[AdConfig alloc] init:@"0000000000067082"];
     //[config setWidth:@"300"];
     //[config setHeight:@"250"];
-    
     //[self.adView loadFromConfig:config completionHandler:self];
     
-    NSString *adScript = @" \
-    <html> \
-    <script type=\"text/javascript\" src=\"https://cdn.adnuntius.com/adn.js\" async></script> \
+    NSString* adId = @"000000000006f450";
+    
+    NSString *adScript = @"""<html><script type=\"text/javascript\" src=\"https://cdn.adnuntius.com/adn.js\" async></script> \
     <body> \
-    <div id=\"adn-000000000006f450\" style=\"display:none\"></div> \
+    <div id=\"adn-%@\" style=\"display:none\"></div> \
     <script type=\"text/javascript\"> \
         window.adn = window.adn || {}; adn.calls = adn.calls || []; \
           adn.calls.push(function() { \
             adn.request({ adUnits: [ \
-                {auId: '000000000006f450', auW: 300, auH: 200, kv: [{'version':'X'}] } \
+                {auId: '%@', auW: 320, auH: 320, kv: [{'version':'X'}] } \
             ]}); \
         }); \
     </script> \
     </body> \
-    </html>";
+    </html>""";
+        
+    NSString *adScriptWithIds = [NSString stringWithFormat:adScript, adId, adId];
     
-    [self.adView loadFromScript:adScript completionHandler:self];
+    [self.adView loadFromScript:adScriptWithIds completionHandler:self];
 }
 
 - (void)onComplete:(AdnuntiusAdWebView * _Nonnull)view :(NSInteger)adCount {
