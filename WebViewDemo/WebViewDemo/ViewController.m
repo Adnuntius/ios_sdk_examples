@@ -19,7 +19,7 @@
         window.adn = window.adn || {}; adn.calls = adn.calls || []; \
           adn.calls.push(function() { \
             adn.request({ adUnits: [ \
-                {auId: '%@', auW: 320, auH: 320, kv: [{'version':'X'}] } \
+                {auId: '%@', auW: 320, auH: 320 } \
             ]}); \
         }); \
     </script> \
