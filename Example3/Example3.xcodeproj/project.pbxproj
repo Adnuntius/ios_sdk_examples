@@ -11,7 +11,7 @@
 		39AE9A2822C969D90082841E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AE9A2722C969D90082841E /* ViewController.swift */; };
 		39AE9A2B22C969D90082841E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39AE9A2922C969D90082841E /* Main.storyboard */; };
 		39AE9A2D22C969D90082841E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39AE9A2C22C969D90082841E /* Assets.xcassets */; };
-		A7B2D244235829080090B0FA /* AdnuntiusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B2D243235829080090B0FA /* AdnuntiusSDK.framework */; };
+		A73516DE256DC22A00A19F80 /* AdnuntiusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73516DD256DC22A00A19F80 /* AdnuntiusSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		39AE9A2A22C969D90082841E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39AE9A2C22C969D90082841E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39AE9A3122C969D90082841E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7B2D243235829080090B0FA /* AdnuntiusSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdnuntiusSDK.framework; path = Carthage/Build/iOS/AdnuntiusSDK.framework; sourceTree = "<group>"; };
+		A73516DD256DC22A00A19F80 /* AdnuntiusSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdnuntiusSDK.framework; path = Carthage/Build/iOS/AdnuntiusSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,7 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7B2D244235829080090B0FA /* AdnuntiusSDK.framework in Frameworks */,
+				A73516DE256DC22A00A19F80 /* AdnuntiusSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,7 +68,7 @@
 		A7C8FF7722DFFF3B00EBDF3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A7B2D243235829080090B0FA /* AdnuntiusSDK.framework */,
+				A73516DD256DC22A00A19F80 /* AdnuntiusSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -235,7 +235,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -290,7 +290,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -312,7 +312,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Example3/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,7 +336,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Example3/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

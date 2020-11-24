@@ -3,4 +3,5 @@ Carthage
 build
 xcuserdata
 Cartfile.resolved
+*.xcsettings
 

@@ -5,12 +5,12 @@
 //  Copyright © 2019 Adnuntius. All rights reserved.
 //
 
-import UIKit
+import WebKit
 import AdnuntiusSDK
 
 class ViewController: UIViewController, AdLoadCompletionHandler {
     @IBOutlet weak var adView: AdnuntiusAdWebView!
-
+    
     fileprivate func promptToLoadScript() {
         let dialogMessage = UIAlertController(title: "Confirm", message: "Do you want to release the Ads?", preferredStyle: .alert)
         
@@ -35,28 +35,28 @@ class ViewController: UIViewController, AdLoadCompletionHandler {
         // Declare Alert message this is just so we can attach the browser debugger
         // stupid apple, android studio has the ability to wait for the app to start before starting the debugger, pity
         // you can't do the same here apple!
-        // promptToLoadScript()
-        
-        self.loadFromScript()
+        promptToLoadScript()
+
+        //self.loadFromScript()
     }
     
     private func loadFromScript() {
         adView.loadFromScript("""
-        <html>
-        <script type="text/javascript" src="https://cdn.adnuntius.com/adn.js" async></script>
-        <body>
-        <div id="adn-000000000006f450" style="display:none"></div>
-        <script type="text/javascript">
-            window.adn = window.adn || {}; adn.calls = adn.calls || [];
-              adn.calls.push(function() {
-                adn.request({ adUnits: [
-                    {auId: '000000000006f450', auW: 300, auH: 200, kv: [{'version':'X'}] }
-                ]});
-            });
-        </script>   
-        </body>
-        </html>
-        """, completionHandler: self)
+            <html>
+                <script type="text/javascript" src="https://cdn.adnuntius.com/adn.js" async></script>
+                <body>
+                <div id="adn-000000000006f450" style="display:none"></div>
+                <script type="text/javascript">
+                    window.adn = window.adn || {}; adn.calls = adn.calls || [];
+                      adn.calls.push(function() {
+                        adn.request({ adUnits: [
+                            {auId: '000000000006f450', auW: 300, auH: 200, kv: [{'version':'X'}] }
+                        ]});
+                    });
+                </script>
+                </body>
+                </html>
+            """, completionHandler: self)
     }
     
     func onComplete(_ view: AdnuntiusAdWebView, _ adCount: Int) {

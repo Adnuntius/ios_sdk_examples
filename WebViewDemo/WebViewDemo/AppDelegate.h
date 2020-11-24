@@ -1,4 +1,4 @@
-#import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 #import <CoreData/CoreData.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
