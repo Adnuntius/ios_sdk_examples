@@ -1,4 +1,4 @@
-#import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 #import <AdnuntiusSDK/AdnuntiusSDK-Swift.h>
 
 @interface ViewController : UIViewController <AdLoadCompletionHandler>

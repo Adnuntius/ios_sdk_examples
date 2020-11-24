@@ -3,7 +3,7 @@
 //  Example3
 //
 
-import UIKit
+import WebKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
