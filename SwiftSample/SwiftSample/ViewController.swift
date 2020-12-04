@@ -1,17 +1,43 @@
 //
 //  ViewController.swift
-//  Example3
+//  SwiftSample
 //
-//  Copyright © 2019 Adnuntius. All rights reserved.
+//  Created by Adnuntius Australia on 7/12/20.
 //
 
-import WebKit
 import AdnuntiusSDK
+import WebKit
+import UIKit
 
 class ViewController: UIViewController, AdLoadCompletionHandler {
-    @IBOutlet weak var adView: AdnuntiusAdWebView!
+    private var adView: AdnuntiusAdWebView = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 100, width: 320, height: 275))
+    private var labelAbove: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 100))
+    private var labelBelow: UILabel = UILabel(frame: CGRect(x: 0, y: 375, width: 320, height: 100))
     
-    fileprivate func promptToLoadAd() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        labelAbove.textAlignment = .center
+        labelAbove.backgroundColor = .brown
+        labelAbove.text = "I'm above"
+        labelAbove.textColor = .white
+        self.view.addSubview(labelAbove)
+        
+        labelBelow.textAlignment = .center
+        labelBelow.backgroundColor = .green
+        labelBelow.text = "I'm below"
+        labelBelow.textColor = .white
+        self.view.addSubview(labelBelow)
+
+        self.adView.backgroundColor = .orange
+        self.view.addSubview(adView)
+        
+        view.backgroundColor = .blue
+        
+        self.view.setNeedsLayout()
+    }
+    
+    private func promptToLoadAd() {
         let dialogMessage = UIAlertController(title: "Confirm", message: "Do you want to release the Ads?", preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
@@ -39,16 +65,16 @@ class ViewController: UIViewController, AdLoadCompletionHandler {
 
         //self.loadFromConfig()
     }
-    
+ 
     private func loadFromConfig() {
-        let configResult = adView.loadFromConfig([
+        let configStatus = adView.loadFromConfig([
               "adUnits": [
-                    ["auId": "000000000006f450", "auW": 200, "kv": [["version": "6s"]]
+                    ["auId": "000000000006f450", "auW": 200, "kv": [["version": "3"]]
                 ]
               ]
             ], completionHandler: self)
-        if !configResult {
-            print("Config is wrong, check the log")
+        if (!configStatus) {
+            print("Check the logs, config is wrong")
         }
     }
     
@@ -61,9 +87,10 @@ class ViewController: UIViewController, AdLoadCompletionHandler {
         view.loadHTMLString("<h1>Error is: \(message)</h1>",
         baseURL: nil)
     }
-    
+        
     func onAdResponse(_ view: AdnuntiusAdWebView, _ width: Int, _ height: Int) {
         print("onAdResponse: width: \(width), height: \(height)")
+        
         var frame = self.adView.frame
         if (height > 0) {
             frame.size.height = CGFloat(height)
