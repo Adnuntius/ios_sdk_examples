@@ -9,6 +9,7 @@ import AdnuntiusSDK
 
 class NewsTableViewController: UITableViewController, AdLoadCompletionHandler {
     
+    
     fileprivate let feedParser = FeedParser()
     fileprivate let feedURL = "http://www.apple.com/main/rss/hotnews/hotnews.rss"
 
@@ -35,34 +36,46 @@ class NewsTableViewController: UITableViewController, AdLoadCompletionHandler {
         }
 
         let adView1 = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 200))
-        adView1.loadFromApi([
+        let configCheck = adView1.loadFromApi([
                "adUnits": [
                 ["auId": "000000000006f450", "kv": [["version": "6s"]]
                 ]
             ]
             ], completionHandler: self)
-
+        if !configCheck {
+            print("What did you do, you broke the ad - check the logs")
+        }
+        adViews.append(adView1)
+        
         let adView2 = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 200))
-        adView2.loadFromApi([
+        let config2Check = adView2.loadFromApi([
                "adUnits": [
                 ["auId": "000000000006f450", "kv": [["version":"X"]]
                 ]
             ]
             ], completionHandler: self)
-
-        adViews.append(adView1)
+        
+        if !config2Check {
+            print("What did you do, you broke the ad - check the logs")
+        }
         adViews.append(adView2)
     }
 
-    func onComplete(_ view: AdnuntiusAdWebView, _ adCount: Int) {
-        print("Complete: " + String(adCount))
-        if (adCount == 0) {
-            // TODO - what to do if no ad
+    func onNoAdResponse(_ view: AdnuntiusAdWebView) {
+        print("No ad returned")
+    }
+    
+    func onAdResponse(_ view: AdnuntiusAdWebView, _ width: Int, _ height: Int) {
+        print("Ad Returned: height: \(height)")
+        if height > 0 {
+            var frame = view.frame
+            frame.size.height = CGFloat(height)
+            view.frame = frame
         }
     }
 
     func onFailure(_ view: AdnuntiusAdWebView, _ message: String) {
-        print("Failure: " + message)
+        print("Failure: \(message)")
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

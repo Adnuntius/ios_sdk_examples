@@ -2,7 +2,7 @@
 
 @implementation ViewController
 
-- (void)promptToLoadScript {
+- (void)promptToLoadAd {
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Confirm"
                                message:@"Do you want to release the Ads?"
                                preferredStyle:UIAlertControllerStyleAlert];
@@ -15,7 +15,7 @@
     UIAlertAction *okAction = [UIAlertAction
                                actionWithTitle:NSLocalizedString(@"OK", @"OK action")
                                style:UIAlertActionStyleDefault
-                               handler:^(UIAlertAction *action){NSLog(@"Ok button tapped"); [self loadFromScript];}];
+                               handler:^(UIAlertAction *action){NSLog(@"Ok button tapped"); [self loadFromConfig];}];
 
     [alert addAction:cancelAction];
     [alert addAction:okAction];
@@ -28,43 +28,46 @@
     // Declare Alert message this is just so we can attach the browser debugger
     // stupid apple, android studio has the ability to wait for the app to start before starting the debugger, pity
     // you can't do the same here apple!
-    //[self promptToLoadScript];
+    //[self promptToLoadAd];
     
-    [self loadFromScript];
+    [self loadFromConfig];
 }
 			
-- (void)loadFromScript {
-    //AdConfig *config = [[AdConfig alloc] init:@"0000000000067082"];
-    //[config setWidth:@"300"];
-    //[config setHeight:@"250"];
-    //[self.adView loadFromConfig:config completionHandler:self];
-
-    NSString* adId = @"000000000006f450";	
+- (void)loadFromConfig {
+    NSString* adId = @"000000000006f450";
     
-    NSString *adScript = @"""<html><script type=\"text/javascript\" src=\"https://cdn.adnuntius.com/adn.js\" async></script> \
-    <body> \
-    <div id=\"adn-%@\" style=\"display:none\"></div> \
-    <script type=\"text/javascript\"> \
-        window.adn = window.adn || {}; adn.calls = adn.calls || []; \
-          adn.calls.push(function() { \
-            adn.request({ adUnits: [ \
-                {auId: '%@', auW: 320, auH: 320 } \
-            ]}); \
-        }); \
-    </script> \
-    </body> \
-    </html>""";
-
-    NSString *adScriptWithIds = [NSString stringWithFormat:adScript, adId, adId];
+    NSDictionary* config = @{
+        @"adUnits" : @[
+                @{
+                    @"auId":adId, @"auH":@200, @"kv": @[@{@"version" : @"X"}]
+                }
+        ]
+    };
     
-    [self.adView loadFromScript:adScriptWithIds completionHandler:self];
+    bool configResult = [self.adView loadFromConfig:config completionHandler:self];
+    if (!configResult) {
+        NSLog(@"Something is wrong with the config, check the logs");
+    }
 }
 
-- (void)onComplete:(AdnuntiusAdWebView * _Nonnull)view :(NSInteger)adCount {
-    NSLog(@"Complete: %1ld", adCount);
+- (void)onNoAdResponse:(AdnuntiusAdWebView * _Nonnull)view {
+    NSLog(@"No add found");
+    self.adView.hidden = true;
 }
 
 - (void)onFailure:(AdnuntiusAdWebView * _Nonnull)view :(NSString * _Nonnull)message {
     NSLog(@"Failure: %@", message);
+    self.adView.hidden = true;
 }
+
+- (void)onAdResponse:(AdnuntiusAdWebView * _Nonnull)view :(NSInteger)width :(NSInteger)height {
+    NSLog(@"ad found, height: %1ld, width: %1ld", height, width);
+    
+    if (height > 0) {
+        CGRect frame = self.adView.frame;
+        frame.size.height = height;
+        self.adView.frame = frame;
+    }
+}
+
 @end
