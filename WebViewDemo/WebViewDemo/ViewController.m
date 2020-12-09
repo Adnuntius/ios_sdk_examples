@@ -51,7 +51,7 @@
 }
 
 - (void)onNoAdResponse:(AdnuntiusAdWebView * _Nonnull)view {
-    NSLog(@"No add found");
+    NSLog(@"No ad found");
     self.adView.hidden = true;
 }
 
