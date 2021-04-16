@@ -19,3 +19,7 @@ Directly embedding the adn.js into a web view sample
 
 A swift example similiar to Example3, but without using a storyboard
 
+# License
+
+This project uses the Apache 2 License.  Refer to the LICENSE file.
+
