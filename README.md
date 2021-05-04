@@ -2,7 +2,7 @@
 
 Examples for ios sdk
 
-## Example 3 - Swift Ad from Script
+## Example 3 - Swift Ad from Config
 
 Directly embedding the adn.js into a web view sample
 Registers AdWebViewStateDelegate to react to missing ad
