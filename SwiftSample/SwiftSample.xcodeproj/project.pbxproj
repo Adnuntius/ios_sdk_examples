@@ -11,18 +11,8 @@
 		A7D3B163257DBBCA0019F3EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3B162257DBBCA0019F3EE /* SceneDelegate.swift */; };
 		A7D3B165257DBBCA0019F3EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3B164257DBBCA0019F3EE /* ViewController.swift */; };
 		A7D3B16A257DBBCA0019F3EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D3B169257DBBCA0019F3EE /* Assets.xcassets */; };
-		A7D3B190257DC5AE0019F3EE /* AdnuntiusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D3B189257DC5AA0019F3EE /* AdnuntiusSDK.framework */; };
+		A7EB08EF264B5AAB00690A97 /* AdnuntiusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EB08EE264B5AAB00690A97 /* AdnuntiusSDK.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A7D3B188257DC5AA0019F3EE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A7D3B182257DC5AA0019F3EE /* AdnuntiusSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 395193D821345ABE008F961C;
-			remoteInfo = AdnuntiusSDK;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A7D3B15D257DBBCA0019F3EE /* SwiftSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,7 +21,7 @@
 		A7D3B164257DBBCA0019F3EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A7D3B169257DBBCA0019F3EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7D3B16E257DBBCA0019F3EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7D3B182257DC5AA0019F3EE /* AdnuntiusSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AdnuntiusSDK.xcodeproj; path = ../../ios_sdk/AdnuntiusSDK.xcodeproj; sourceTree = "<group>"; };
+		A7EB08EE264B5AAB00690A97 /* AdnuntiusSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdnuntiusSDK.framework; path = Carthage/Build/iOS/AdnuntiusSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7D3B190257DC5AE0019F3EE /* AdnuntiusSDK.framework in Frameworks */,
+				A7EB08EF264B5AAB00690A97 /* AdnuntiusSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +41,7 @@
 			children = (
 				A7D3B15F257DBBCA0019F3EE /* SwiftSample */,
 				A7D3B15E257DBBCA0019F3EE /* Products */,
-				A7D3B177257DC58A0019F3EE /* Frameworks */,
+				A7EB08ED264B5AAB00690A97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,20 +65,12 @@
 			path = SwiftSample;
 			sourceTree = "<group>";
 		};
-		A7D3B177257DC58A0019F3EE /* Frameworks */ = {
+		A7EB08ED264B5AAB00690A97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A7D3B182257DC5AA0019F3EE /* AdnuntiusSDK.xcodeproj */,
+				A7EB08EE264B5AAB00690A97 /* AdnuntiusSDK.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A7D3B183257DC5AA0019F3EE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A7D3B189257DC5AA0019F3EE /* AdnuntiusSDK.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,28 +119,12 @@
 			mainGroup = A7D3B154257DBBC90019F3EE;
 			productRefGroup = A7D3B15E257DBBCA0019F3EE /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A7D3B183257DC5AA0019F3EE /* Products */;
-					ProjectRef = A7D3B182257DC5AA0019F3EE /* AdnuntiusSDK.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				A7D3B15C257DBBCA0019F3EE /* SwiftSample */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		A7D3B189257DC5AA0019F3EE /* AdnuntiusSDK.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AdnuntiusSDK.framework;
-			remoteRef = A7D3B188257DC5AA0019F3EE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A7D3B15B257DBBCA0019F3EE /* Resources */ = {
@@ -329,6 +295,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5S8YF53WP2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SwiftSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -348,6 +318,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5S8YF53WP2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SwiftSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

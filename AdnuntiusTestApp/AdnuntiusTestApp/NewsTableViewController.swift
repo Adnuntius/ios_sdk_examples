@@ -36,11 +36,12 @@ class NewsTableViewController: UITableViewController, AdLoadCompletionHandler {
         }
 
         let adView1 = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 200))
-        let configCheck = adView1.loadFromApi([
+        let configCheck = adView1.loadAd([
                "adUnits": [
                 ["auId": "000000000006f450", "kv": [["version": "6s"]]
                 ]
-            ]
+            ],
+            "useCookies": false
             ], completionHandler: self)
         if !configCheck {
             print("What did you do, you broke the ad - check the logs")
@@ -48,11 +49,12 @@ class NewsTableViewController: UITableViewController, AdLoadCompletionHandler {
         adViews.append(adView1)
         
         let adView2 = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 200))
-        let config2Check = adView2.loadFromApi([
+        let config2Check = adView2.loadAd([
                "adUnits": [
                 ["auId": "000000000006f450", "kv": [["version":"X"]]
                 ]
-            ]
+            ],
+            "useCookies": false
             ], completionHandler: self)
         
         if !config2Check {

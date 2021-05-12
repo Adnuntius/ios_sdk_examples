@@ -41,10 +41,11 @@
                 @{
                     @"auId":adId, @"auH":@200, @"kv": @[@{@"version" : @"X"}]
                 }
-        ]
+        ],
+        @"useCookies": @false
     };
     
-    bool configResult = [self.adView loadFromConfig:config completionHandler:self];
+    bool configResult = [self.adView loadAd:config completionHandler:self];
     if (!configResult) {
         NSLog(@"Something is wrong with the config, check the logs");
     }
