@@ -67,13 +67,18 @@ class ViewController: UIViewController, AdLoadCompletionHandler {
     }
  
     private func loadFromConfig() {
-        let configStatus = adView.loadAd([
+        let config = [
             "adUnits": [
-                   ["auId": "000000000006f450", "auW": 200, "kv": [["version": "3"]]
-                ]
+                   [
+                    "auId": "00000000000e280a"
+                   ]
             ],
-            "useCookies": false
-            ], completionHandler: self)
+            "useCookies": false,
+            "lpl": "rqbvg981zjr9bqgs",
+            "lpc": "03z2k712kpqt135w"
+        ] as [String : Any]
+        
+        let configStatus = adView.loadAd(config, completionHandler: self)
         if (!configStatus) {
             print("Check the logs, config is wrong")
         }
