@@ -33,8 +33,6 @@ class ViewController: UIViewController, AdLoadCompletionHandler {
         super.viewDidAppear(animated)
 
         // Declare Alert message this is just so we can attach the browser debugger
-        // stupid apple, android studio has the ability to wait for the app to start before starting the debugger, pity
-        // you can't do the same here apple!
         promptToLoadAd()
 
         //self.loadFromConfig()

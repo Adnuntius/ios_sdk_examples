@@ -59,8 +59,6 @@ class ViewController: UIViewController, AdLoadCompletionHandler {
         super.viewDidAppear(animated)
 
         // Declare Alert message this is just so we can attach the browser debugger
-        // stupid apple, android studio has the ability to wait for the app to start before starting the debugger, pity
-        // you can't do the same here apple!
         promptToLoadAd()
 
         //self.loadFromConfig()
@@ -70,12 +68,10 @@ class ViewController: UIViewController, AdLoadCompletionHandler {
         let config = [
             "adUnits": [
                    [
-                    "auId": "00000000000e280a"
+                    "auId": "000000000006f450", "auW": 200, "kv": [["version": "3"]]
                    ]
             ],
-            "useCookies": false,
-            "lpl": "rqbvg981zjr9bqgs",
-            "lpc": "03z2k712kpqt135w"
+            "useCookies": false
         ] as [String : Any]
         
         let configStatus = adView.loadAd(config, completionHandler: self)

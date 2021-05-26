@@ -109,13 +109,6 @@ class NewsTableViewController: UITableViewController, AdLoadCompletionHandler {
         cell.clipsToBounds = true
         cell.addSubview(webView)
         cell.sizeToFit()
-        
-        /*webView.topAnchor.constraint(equalTo: cell.topAnchor, constant: 10).isActive = true
-        webView.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: 10).isActive = true
-        webView.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 0).isActive = true
-        webView.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: 0).isActive = true*/
-        //webView.heightAnchor.constraint(equalTo: cell.heightAnchor, multiplier: 1.0).isActive = true
-        //cell.heightAnchor.constraint(equalToConstant: webView.frame.height)
         cell.layoutSubviews()
 
         return cell
