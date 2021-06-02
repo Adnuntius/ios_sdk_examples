@@ -2,19 +2,19 @@
 
 Examples for ios sdk
 
-## Example 3 - Swift loadAd
+## SwiftLayoutExample - Swift with storyboard 
 
 A very simple swift example, with a storyboard
 
-## WebViewDemo - Objective C Ad From Config
+## ObjectiveCExample - Objective-C with storyboard
 
-Simple Objective-C example of loading an ad
+Simple Objective-C example with a storyboard
 
 ## SwiftExample
 
-A swift example similiar to Example3, but without using a storyboard
+A swift example similiar to SwiftLayoutExample, but without using a storyboard
 
-## AdnuntiusTestApp
+## NewsFeedSwiftExample
 
 A swift example of loading ads into a news feed app
 
