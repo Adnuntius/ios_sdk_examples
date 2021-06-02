@@ -338,7 +338,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/NewsFeedSwiftExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -362,7 +361,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/NewsFeedSwiftExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

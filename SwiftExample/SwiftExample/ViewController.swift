@@ -68,14 +68,9 @@ class ViewController: UIViewController, AdLoadCompletionHandler {
         let config = [
             "adUnits": [
                    [
-                    "auId": "00000000000e25e9", "kv": [["app": "iOS"]], "c": "Brandenburg/Müllrose/15299/Bart-Müllrose"
+                    "auId": "000000000006f450", "auW": 200, "kv": [["version": "3"]]
                    ]
             ],
-//            "adUnits": [
-//                   [
-//                    "auId": "000000000006f450", "auW": 200, "kv": [["version": "3"]]
-//                   ]
-//            ],
             "useCookies": false
         ] as [String : Any]
         
