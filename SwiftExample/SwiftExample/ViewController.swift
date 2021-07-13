@@ -69,10 +69,12 @@ class ViewController: UIViewController, AdLoadCompletionHandler {
             "adUnits": [
                    [
                     //"auId": "000000000006f450", "auW": 200, "kv": [["version": "3"]]
-                    "auId": "000000000006f450", "kv": [["version": "srcdoc"]]
+                    "auId": "000000000006f450" // , "kv": [["version": "srcdoc"]]
                    ]
             ],
-            "useCookies": false
+            "useCookies": false,
+            "lpl": "7pmy5r9rj62fyhjm",
+            "lpc": "60n8zsv29kx9mmty"
         ] as [String : Any]
         
         let configStatus = adView.loadAd(config, completionHandler: self)
