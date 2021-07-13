@@ -68,7 +68,8 @@ class ViewController: UIViewController, AdLoadCompletionHandler {
         let config = [
             "adUnits": [
                    [
-                    "auId": "000000000006f450", "auW": 200, "kv": [["version": "3"]]
+                    //"auId": "000000000006f450", "auW": 200, "kv": [["version": "3"]]
+                    "auId": "000000000006f450", "kv": [["version": "srcdoc"]]
                    ]
             ],
             "useCookies": false
