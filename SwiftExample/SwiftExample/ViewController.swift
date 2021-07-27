@@ -9,7 +9,7 @@ import AdnuntiusSDK
 import WebKit
 import UIKit
 
-class ViewController: UIViewController, AdLoadCompletionHandler {
+class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
     private var adView: AdnuntiusAdWebView = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 100, width: 320, height: 275))
     private var labelAbove: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 100))
     private var labelBelow: UILabel = UILabel(frame: CGRect(x: 0, y: 375, width: 320, height: 100))
@@ -69,15 +69,15 @@ class ViewController: UIViewController, AdLoadCompletionHandler {
             "adUnits": [
                    [
                     //"auId": "000000000006f450", "auW": 200, "kv": [["version": "3"]]
-                    "auId": "000000000006f450" // , "kv": [["version": "srcdoc"]]
+                    "auId": "000000000006f450"  , "kv": [["version": "interstitial2"]]
                    ]
             ],
-            "useCookies": false,
-            "lpl": "7pmy5r9rj62fyhjm",
-            "lpc": "60n8zsv29kx9mmty"
+            "useCookies": false//,
+            //"lpl": "7pmy5r9rj62fyhjm",
+            //"lpc": "60n8zsv29kx9mmty"
         ] as [String : Any]
         
-        let configStatus = adView.loadAd(config, completionHandler: self)
+        let configStatus = adView.loadAd(config, completionHandler: self, adnSdkHandler: self)
         if (!configStatus) {
             print("Check the logs, config is wrong")
         }
@@ -101,5 +101,10 @@ class ViewController: UIViewController, AdLoadCompletionHandler {
             frame.size.height = CGFloat(height)
         }
         self.adView.frame = frame
+    }
+    
+    func onClose(_ view: AdnuntiusAdWebView) {
+        Logger.debug("Here is close")
+        UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
     }
 }
