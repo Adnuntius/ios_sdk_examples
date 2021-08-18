@@ -43,7 +43,7 @@
         @"useCookies": @false
     };
     
-    bool configResult = [self.adView loadAd:config completionHandler:self];
+    bool configResult = [self.adView loadAd:config completionHandler:self adnSdkHandler:nil];
     if (!configResult) {
         NSLog(@"Something is wrong with the config, check the logs");
     }
@@ -67,6 +67,10 @@
         frame.size.height = height;
         self.adView.frame = frame;
     }
+}
+
+- (void)onClose:(AdnuntiusAdWebView * _Nonnull)view {
+    NSLog(@"No on close implemented");
 }
 
 @end
