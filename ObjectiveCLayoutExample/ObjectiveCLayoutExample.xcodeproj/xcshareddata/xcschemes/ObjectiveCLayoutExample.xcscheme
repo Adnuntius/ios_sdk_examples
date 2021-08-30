@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A4BC38B61EAAA7C400AE68B4"
-               BuildableName = "ObjectiveCExample.app"
-               BlueprintName = "ObjectiveCExample"
-               ReferencedContainer = "container:ObjectiveCExample.xcodeproj">
+               BuildableName = "ObjectiveCLayoutExample.app"
+               BlueprintName = "ObjectiveCLayoutExample"
+               ReferencedContainer = "container:ObjectiveCLayoutExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A4BC38B61EAAA7C400AE68B4"
-            BuildableName = "ObjectiveCExample.app"
-            BlueprintName = "ObjectiveCExample"
-            ReferencedContainer = "container:ObjectiveCExample.xcodeproj">
+            BuildableName = "ObjectiveCLayoutExample.app"
+            BlueprintName = "ObjectiveCLayoutExample"
+            ReferencedContainer = "container:ObjectiveCLayoutExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A4BC38B61EAAA7C400AE68B4"
-            BuildableName = "ObjectiveCExample.app"
-            BlueprintName = "ObjectiveCExample"
-            ReferencedContainer = "container:ObjectiveCExample.xcodeproj">
+            BuildableName = "ObjectiveCLayoutExample.app"
+            BlueprintName = "ObjectiveCLayoutExample"
+            ReferencedContainer = "container:ObjectiveCLayoutExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

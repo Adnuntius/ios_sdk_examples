@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26C0F8572667206600A49F39 /* AdnuntiusSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263988CA2667001F00D93907 /* AdnuntiusSDK.xcframework */; };
-		26C0F8582667206600A49F39 /* AdnuntiusSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 263988CA2667001F00D93907 /* AdnuntiusSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26285ED726DCB4750061AC7B /* AdnuntiusSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26285ED626DCB4750061AC7B /* AdnuntiusSDK.xcframework */; };
 		A4BC38BC1EAAA7C400AE68B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BC38BB1EAAA7C400AE68B4 /* main.m */; };
 		A4BC38BF1EAAA7C400AE68B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BC38BE1EAAA7C400AE68B4 /* AppDelegate.m */; };
 		A4BC38C21EAAA7C400AE68B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BC38C11EAAA7C400AE68B4 /* ViewController.m */; };
@@ -24,7 +23,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				26C0F8582667206600A49F39 /* AdnuntiusSDK.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,8 +30,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		263988CA2667001F00D93907 /* AdnuntiusSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AdnuntiusSDK.xcframework; path = Carthage/Build/AdnuntiusSDK.xcframework; sourceTree = "<group>"; };
-		A4BC38B71EAAA7C400AE68B4 /* ObjectiveCExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26285ED626DCB4750061AC7B /* AdnuntiusSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AdnuntiusSDK.xcframework; path = Carthage/Build/AdnuntiusSDK.xcframework; sourceTree = "<group>"; };
+		A4BC38B71EAAA7C400AE68B4 /* ObjectiveCLayoutExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCLayoutExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BC38BB1EAAA7C400AE68B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A4BC38BD1EAAA7C400AE68B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4BC38BE1EAAA7C400AE68B4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -50,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26C0F8572667206600A49F39 /* AdnuntiusSDK.xcframework in Frameworks */,
+				26285ED726DCB4750061AC7B /* AdnuntiusSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +58,7 @@
 		A4BC38AE1EAAA7C400AE68B4 = {
 			isa = PBXGroup;
 			children = (
-				A4BC38B91EAAA7C400AE68B4 /* ObjectiveCExample */,
+				A4BC38B91EAAA7C400AE68B4 /* ObjectiveCLayoutExample */,
 				A4BC38B81EAAA7C400AE68B4 /* Products */,
 				A7B2D22A235804790090B0FA /* Frameworks */,
 			);
@@ -69,12 +67,12 @@
 		A4BC38B81EAAA7C400AE68B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4BC38B71EAAA7C400AE68B4 /* ObjectiveCExample.app */,
+				A4BC38B71EAAA7C400AE68B4 /* ObjectiveCLayoutExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A4BC38B91EAAA7C400AE68B4 /* ObjectiveCExample */ = {
+		A4BC38B91EAAA7C400AE68B4 /* ObjectiveCLayoutExample */ = {
 			isa = PBXGroup;
 			children = (
 				A4BC38BD1EAAA7C400AE68B4 /* AppDelegate.h */,
@@ -87,7 +85,7 @@
 				A4BC38C61EAAA7C500AE68B4 /* WebViewDemo.xcdatamodeld */,
 				A4BC38BA1EAAA7C400AE68B4 /* Supporting Files */,
 			);
-			path = ObjectiveCExample;
+			path = ObjectiveCLayoutExample;
 			sourceTree = "<group>";
 		};
 		A4BC38BA1EAAA7C400AE68B4 /* Supporting Files */ = {
@@ -101,7 +99,7 @@
 		A7B2D22A235804790090B0FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				263988CA2667001F00D93907 /* AdnuntiusSDK.xcframework */,
+				26285ED626DCB4750061AC7B /* AdnuntiusSDK.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,9 +107,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A4BC38B61EAAA7C400AE68B4 /* ObjectiveCExample */ = {
+		A4BC38B61EAAA7C400AE68B4 /* ObjectiveCLayoutExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A4BC38E71EAAA7C500AE68B4 /* Build configuration list for PBXNativeTarget "ObjectiveCExample" */;
+			buildConfigurationList = A4BC38E71EAAA7C500AE68B4 /* Build configuration list for PBXNativeTarget "ObjectiveCLayoutExample" */;
 			buildPhases = (
 				A4BC38B31EAAA7C400AE68B4 /* Sources */,
 				A4BC38B41EAAA7C400AE68B4 /* Frameworks */,
@@ -122,9 +120,9 @@
 			);
 			dependencies = (
 			);
-			name = ObjectiveCExample;
+			name = ObjectiveCLayoutExample;
 			productName = WebViewDemo;
-			productReference = A4BC38B71EAAA7C400AE68B4 /* ObjectiveCExample.app */;
+			productReference = A4BC38B71EAAA7C400AE68B4 /* ObjectiveCLayoutExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -143,7 +141,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A4BC38B21EAAA7C400AE68B4 /* Build configuration list for PBXProject "ObjectiveCExample" */;
+			buildConfigurationList = A4BC38B21EAAA7C400AE68B4 /* Build configuration list for PBXProject "ObjectiveCLayoutExample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -156,7 +154,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A4BC38B61EAAA7C400AE68B4 /* ObjectiveCExample */,
+				A4BC38B61EAAA7C400AE68B4 /* ObjectiveCLayoutExample */,
 			);
 		};
 /* End PBXProject section */
@@ -318,7 +316,7 @@
 					"$(inherited)",
 					"${PROJECT_DIR}",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/ObjectiveCExample/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ObjectiveCLayoutExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -338,7 +336,7 @@
 					"$(inherited)",
 					"${PROJECT_DIR}",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/ObjectiveCExample/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ObjectiveCLayoutExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -352,7 +350,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A4BC38B21EAAA7C400AE68B4 /* Build configuration list for PBXProject "ObjectiveCExample" */ = {
+		A4BC38B21EAAA7C400AE68B4 /* Build configuration list for PBXProject "ObjectiveCLayoutExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A4BC38E51EAAA7C500AE68B4 /* Debug */,
@@ -361,7 +359,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A4BC38E71EAAA7C500AE68B4 /* Build configuration list for PBXNativeTarget "ObjectiveCExample" */ = {
+		A4BC38E71EAAA7C500AE68B4 /* Build configuration list for PBXNativeTarget "ObjectiveCLayoutExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A4BC38E81EAAA7C500AE68B4 /* Debug */,

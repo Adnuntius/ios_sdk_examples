@@ -6,7 +6,7 @@ Examples for ios sdk
 
 A very simple swift example, with a storyboard
 
-## ObjectiveCExample - Objective-C with storyboard
+## ObjectiveLayoutCExample - Objective-C with storyboard
 
 Simple Objective-C example with a storyboard
 
