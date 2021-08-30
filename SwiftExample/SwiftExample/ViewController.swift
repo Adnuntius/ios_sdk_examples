@@ -32,8 +32,7 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
         self.adView.backgroundColor = .orange
         self.view.addSubview(adView)
         
-        view.backgroundColor = .blue
-        
+        self.view.backgroundColor = .blue
         self.view.setNeedsLayout()
     }
     
