@@ -10,9 +10,9 @@ import WebKit
 import UIKit
 
 class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
-    private var adView: AdnuntiusAdWebView = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 100, width: 320, height: 275))
     private var labelAbove: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 100))
-    private var labelBelow: UILabel = UILabel(frame: CGRect(x: 0, y: 375, width: 320, height: 100))
+    private var adView: AdnuntiusAdWebView = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 100, width: 320, height: 275))
+    private var labelBelow: UILabel = UILabel(frame: CGRect(x: 0, y: 375, width: 320, height: 125))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,9 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
         self.view.addSubview(labelBelow)
 
         self.adView.backgroundColor = .orange
+        self.adView.scrollView.backgroundColor = .purple
+        self.adView.isOpaque = false
+        self.adView.scrollView.isOpaque = false
         self.view.addSubview(adView)
         
         self.view.backgroundColor = .blue
@@ -95,11 +98,11 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
     func onAdResponse(_ view: AdnuntiusAdWebView, _ width: Int, _ height: Int) {
         print("onAdResponse: width: \(width), height: \(height)")
         
-        var frame = self.adView.frame
-        if (height > 0) {
-            frame.size.height = CGFloat(height)
-        }
-        self.adView.frame = frame
+//        var frame = self.adView.frame
+//        if (height > 0) {
+//            frame.size.height = CGFloat(height)
+//        }
+//        self.adView.frame = frame
     }
     
     func onClose(_ view: AdnuntiusAdWebView) {

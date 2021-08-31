@@ -7,35 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		266DA1D12667227900CCEF52 /* AdnuntiusSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263988D2266700C300D93907 /* AdnuntiusSDK.xcframework */; };
-		266DA1D22667227900CCEF52 /* AdnuntiusSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 263988D2266700C300D93907 /* AdnuntiusSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26A1F50226DDC86B008B4E5C /* AdnuntiusSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F50126DDC86B008B4E5C /* AdnuntiusSDK.xcframework */; };
 		A7D3B161257DBBCA0019F3EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3B160257DBBCA0019F3EE /* AppDelegate.swift */; };
 		A7D3B163257DBBCA0019F3EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3B162257DBBCA0019F3EE /* SceneDelegate.swift */; };
 		A7D3B165257DBBCA0019F3EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3B164257DBBCA0019F3EE /* ViewController.swift */; };
-		A7D3B16A257DBBCA0019F3EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D3B169257DBBCA0019F3EE /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		266DA1D32667227900CCEF52 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				266DA1D22667227900CCEF52 /* AdnuntiusSDK.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		263988D2266700C300D93907 /* AdnuntiusSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AdnuntiusSDK.xcframework; path = Carthage/Build/AdnuntiusSDK.xcframework; sourceTree = "<group>"; };
+		26A1F50126DDC86B008B4E5C /* AdnuntiusSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AdnuntiusSDK.xcframework; path = Carthage/Build/AdnuntiusSDK.xcframework; sourceTree = "<group>"; };
 		A7D3B15D257DBBCA0019F3EE /* SwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D3B160257DBBCA0019F3EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D3B162257DBBCA0019F3EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A7D3B164257DBBCA0019F3EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A7D3B169257DBBCA0019F3EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7D3B16E257DBBCA0019F3EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,7 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				266DA1D12667227900CCEF52 /* AdnuntiusSDK.xcframework in Frameworks */,
+				26A1F50226DDC86B008B4E5C /* AdnuntiusSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +57,6 @@
 				A7D3B160257DBBCA0019F3EE /* AppDelegate.swift */,
 				A7D3B162257DBBCA0019F3EE /* SceneDelegate.swift */,
 				A7D3B164257DBBCA0019F3EE /* ViewController.swift */,
-				A7D3B169257DBBCA0019F3EE /* Assets.xcassets */,
 				A7D3B16E257DBBCA0019F3EE /* Info.plist */,
 			);
 			path = SwiftExample;
@@ -83,7 +65,7 @@
 		A7EB08ED264B5AAB00690A97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				263988D2266700C300D93907 /* AdnuntiusSDK.xcframework */,
+				26A1F50126DDC86B008B4E5C /* AdnuntiusSDK.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -98,7 +80,6 @@
 				A7D3B159257DBBCA0019F3EE /* Sources */,
 				A7D3B15A257DBBCA0019F3EE /* Frameworks */,
 				A7D3B15B257DBBCA0019F3EE /* Resources */,
-				266DA1D32667227900CCEF52 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,7 +127,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7D3B16A257DBBCA0019F3EE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

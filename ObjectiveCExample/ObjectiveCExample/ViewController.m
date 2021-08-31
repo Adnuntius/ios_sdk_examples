@@ -22,30 +22,12 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-     [super viewDidAppear:animated];
-    
-    // Declare Alert message this is just so we can attach the browser debugger
-    //[self promptToLoadAd];
-    
-    [self loadFromConfig];
-}
-            
-- (void)loadFromConfig {
-    NSString* adId = @"000000000006f450";
-    
-    NSDictionary* config = @{
-        @"adUnits" : @[
-                @{
-                    @"auId":adId, @"auH":@200, @"kv": @[@{@"version" : @"X"}]
-                }
-        ],
-        @"useCookies": @false
-    };
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
     UILabel *labelAbove = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 320, 100)];
-    UILabel *labelBelow = [[UILabel alloc]initWithFrame:CGRectMake(0, 375, 320, 100)];
     self.adView=[[AdnuntiusAdWebView alloc] initWithFrame:CGRectMake(0, 100, 320, 275)];
+    UILabel *labelBelow = [[UILabel alloc]initWithFrame:CGRectMake(0, 375, 320, 125)];
     
     labelAbove.textAlignment = NSTextAlignmentCenter;
     labelAbove.backgroundColor = [UIColor brownColor];
@@ -60,11 +42,38 @@
     self.adView.backgroundColor = [UIColor orangeColor];
     
     self.view.backgroundColor = [UIColor blueColor];
+    [self.adView setOpaque:FALSE];
+    self.adView.scrollView.backgroundColor = [UIColor purpleColor];
+    [self.adView.scrollView setOpaque:FALSE];
+    
     [self.view setNeedsLayout];
     
     [self.view addSubview:labelAbove];
     [self.view addSubview:self.adView];
     [self.view addSubview:labelBelow];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+     [super viewDidAppear:animated];
+
+    // Declare Alert message this is just so we can attach the browser debugger
+    [self promptToLoadAd];
+    
+    //[self loadFromConfig];
+}
+            
+- (void)loadFromConfig {
+    NSString* adId = @"000000000006f450";
+    
+    NSDictionary* config = @{
+        @"adUnits" : @[
+                @{
+                    @"auId":adId, @"auH":@200, @"kv": @[@{@"version" : @"6s"}]
+                }
+        ],
+        @"useCookies": @false
+    };
+
     bool configResult = [self.adView loadAd:config completionHandler:self adnSdkHandler:nil];
     if (!configResult) {
         NSLog(@"Something is wrong with the config, check the logs");
