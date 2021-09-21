@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261F8C1526F9703D00961581 /* AdnuntiusSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261F8C1426F9703D00961581 /* AdnuntiusSDK.xcframework */; };
+		261F8C1626F9703D00961581 /* AdnuntiusSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 261F8C1426F9703D00961581 /* AdnuntiusSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26285F3026DCB94D0061AC7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26285F2F26DCB94D0061AC7B /* AppDelegate.m */; };
 		26285F3326DCB94D0061AC7B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26285F3226DCB94D0061AC7B /* SceneDelegate.m */; };
 		26285F3626DCB94D0061AC7B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26285F3526DCB94D0061AC7B /* ViewController.m */; };
 		26285F4126DCB94E0061AC7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26285F4026DCB94E0061AC7B /* main.m */; };
-		26A1F4FF26DDC810008B4E5C /* AdnuntiusSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F4FE26DDC810008B4E5C /* AdnuntiusSDK.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -21,6 +22,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				261F8C1626F9703D00961581 /* AdnuntiusSDK.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -28,6 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		261F8C1426F9703D00961581 /* AdnuntiusSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AdnuntiusSDK.xcframework; path = Carthage/Build/AdnuntiusSDK.xcframework; sourceTree = "<group>"; };
 		26285F2B26DCB94D0061AC7B /* ObjectiveCExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26285F2E26DCB94D0061AC7B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		26285F2F26DCB94D0061AC7B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -37,7 +40,6 @@
 		26285F3526DCB94D0061AC7B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		26285F3F26DCB94E0061AC7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26285F4026DCB94E0061AC7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		26A1F4FE26DDC810008B4E5C /* AdnuntiusSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AdnuntiusSDK.xcframework; path = Carthage/Build/AdnuntiusSDK.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A1F4FF26DDC810008B4E5C /* AdnuntiusSDK.xcframework in Frameworks */,
+				261F8C1526F9703D00961581 /* AdnuntiusSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +89,7 @@
 		26285F6326DCBD5F0061AC7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				26A1F4FE26DDC810008B4E5C /* AdnuntiusSDK.xcframework */,
+				261F8C1426F9703D00961581 /* AdnuntiusSDK.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

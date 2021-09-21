@@ -60,9 +60,8 @@
     NSString* globalUserId = [[NSUserDefaults standardUserDefaults] stringForKey:@"globalUserId"];
     if ([globalUserId length] == 0) {
         NSLog(@"No global user id found, generating");
-        NSUUID *uuid = [NSUUID UUID];
-        NSString *str = [uuid UUIDString];
-        [[NSUserDefaults standardUserDefaults] setObject: str forKey:@"globalUserId"];
+        NSString *userId = [[NSUUID UUID] UUIDString];
+        [[NSUserDefaults standardUserDefaults] setObject: userId forKey:@"globalUserId"];
     }
 }
 
@@ -79,6 +78,9 @@
     NSString* globalUserId = [[NSUserDefaults standardUserDefaults] stringForKey:@"globalUserId"];
     NSLog(@"global user is %@", globalUserId);
     
+    [self.adView enableDebug:YES];
+    NSString *sessionId = [[NSUUID UUID] UUIDString];
+    
     NSString* adId = @"000000000006f450";
     
     NSDictionary* config = @{
@@ -87,7 +89,9 @@
                     @"auId":adId, @"auH":@200, @"kv": @[@{@"version" : @"6s"}]
                 }
         ],
-        @"useCookies": @false
+        @"useCookies": @false,
+        @"userId": globalUserId,
+        @"sessionId": sessionId
     };
 
     bool configResult = [self.adView loadAd:config completionHandler:self adnSdkHandler:nil];

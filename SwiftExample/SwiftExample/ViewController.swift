@@ -76,9 +76,14 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
     }
  
     private func loadFromConfig() {
+        adView.enableDebug(true)
+        
         let globalUserId = UserDefaults.standard.string(forKey: "globalUserId")!
+        let sessionId = UUID().uuidString
         print("The global user id is \(globalUserId)")
         let config = [
+            "userId": globalUserId,
+            "sessionId": sessionId,
             "adUnits": [
                    [
                     //"auId": "000000000006f450", "auW": 200, "kv": [["version": "3"]]
@@ -117,7 +122,7 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
     }
     
     func onClose(_ view: AdnuntiusAdWebView) {
-        Logger.debug("Here is close")
+        print("Here is close")
         UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
     }
 }
