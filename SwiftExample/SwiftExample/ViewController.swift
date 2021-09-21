@@ -37,6 +37,15 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
         
         self.view.backgroundColor = .blue
         self.view.setNeedsLayout()
+        
+        let defaults = UserDefaults.standard
+        defaults.register(defaults:["globalUserId" : ""])
+        
+        let globalUserId = defaults.string(forKey: "globalUserId")!
+        if globalUserId.isEmpty {
+            print("No user id found, generating and saving a new one")
+            defaults.set(UUID().uuidString, forKey: "globalUserId")
+        }
     }
     
     private func promptToLoadAd() {
@@ -67,6 +76,8 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
     }
  
     private func loadFromConfig() {
+        let globalUserId = UserDefaults.standard.string(forKey: "globalUserId")!
+        print("The global user id is \(globalUserId)")
         let config = [
             "adUnits": [
                    [
@@ -98,11 +109,11 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
     func onAdResponse(_ view: AdnuntiusAdWebView, _ width: Int, _ height: Int) {
         print("onAdResponse: width: \(width), height: \(height)")
         
-//        var frame = self.adView.frame
-//        if (height > 0) {
-//            frame.size.height = CGFloat(height)
-//        }
-//        self.adView.frame = frame
+        var frame = self.adView.frame
+        if (height > 0) {
+            frame.size.height = CGFloat(height)
+        }
+        self.adView.frame = frame
     }
     
     func onClose(_ view: AdnuntiusAdWebView) {

@@ -51,6 +51,19 @@
     [self.view addSubview:labelAbove];
     [self.view addSubview:self.adView];
     [self.view addSubview:labelBelow];
+
+    NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
+                                     @"", @"globalUserId",
+                                     nil];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+    
+    NSString* globalUserId = [[NSUserDefaults standardUserDefaults] stringForKey:@"globalUserId"];
+    if ([globalUserId length] == 0) {
+        NSLog(@"No global user id found, generating");
+        NSUUID *uuid = [NSUUID UUID];
+        NSString *str = [uuid UUIDString];
+        [[NSUserDefaults standardUserDefaults] setObject: str forKey:@"globalUserId"];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -63,6 +76,9 @@
 }
             
 - (void)loadFromConfig {
+    NSString* globalUserId = [[NSUserDefaults standardUserDefaults] stringForKey:@"globalUserId"];
+    NSLog(@"global user is %@", globalUserId);
+    
     NSString* adId = @"000000000006f450";
     
     NSDictionary* config = @{
