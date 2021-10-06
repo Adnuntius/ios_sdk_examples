@@ -91,7 +91,8 @@
         ],
         @"useCookies": @false,
         @"userId": globalUserId,
-        @"sessionId": sessionId
+        @"sessionId": sessionId,
+        @"consentString": @"some consent string"
     };
 
     bool configResult = [self.adView loadAd:config completionHandler:self adnSdkHandler:nil];

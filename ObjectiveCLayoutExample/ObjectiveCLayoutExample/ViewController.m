@@ -26,9 +26,9 @@
      [super viewDidAppear:animated];
     
     // Declare Alert message this is just so we can attach the browser debugger
-    //[self promptToLoadAd];
+    [self promptToLoadAd];
     
-    [self loadFromConfig];
+    //[self loadFromConfig];
 }
 			
 - (void)loadFromConfig {
@@ -42,7 +42,7 @@
         ],
         @"useCookies": @false
     };
-    
+    [self.adView enableDebug:YES];
     bool configResult = [self.adView loadAd:config completionHandler:self adnSdkHandler:nil];
     if (!configResult) {
         NSLog(@"Something is wrong with the config, check the logs");
