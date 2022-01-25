@@ -37,7 +37,7 @@
     NSDictionary* config = @{
         @"adUnits" : @[
                 @{
-                    @"auId":adId, @"auH":@200, @"kv": @[@{@"version" : @"X"}]
+                    @"auId":adId, @"auH":@200, @"kv": @{@"version" : @[@"X"]}
                 }
         ],
         @"useCookies": @false

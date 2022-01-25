@@ -43,7 +43,7 @@ class ViewController: UIViewController, AdLoadCompletionHandler {
         
         let configResult = adView.loadAd([
               "adUnits": [
-                    ["auId": "000000000006f450", "auW": 200, "kv": [["version": "6s"]]
+                    ["auId": "000000000006f450", "auW": 200, "kv": ["version": ["6s"]]
                 ]
               ],
             "useCookies": false

@@ -87,7 +87,7 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
             "adUnits": [
                    [
                     //"auId": "000000000006f450", "auW": 200, "kv": [["version": "3"]]
-                    "auId": "000000000006f450"  , "kv": [["version": "interstitial2"]]
+                    "auId": "000000000006f450"  , "kv": ["version": ["interstitial2"]]
                    ]
             ],
             "useCookies": false//,
