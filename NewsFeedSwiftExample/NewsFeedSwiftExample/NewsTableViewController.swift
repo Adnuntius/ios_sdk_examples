@@ -36,7 +36,7 @@ class NewsTableViewController: UITableViewController, AdLoadCompletionHandler {
         }
 
         let adView1 = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 200))
-        let configCheck = adView1.loadAd([
+        let configCheck = adView1.loadFromConfig([
                "adUnits": [
                 ["auId": "000000000006f450", "kv": ["version": ["6s"]]
                 ]
@@ -49,7 +49,7 @@ class NewsTableViewController: UITableViewController, AdLoadCompletionHandler {
         adViews.append(adView1)
         
         let adView2 = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 200))
-        let config2Check = adView2.loadAd([
+        let config2Check = adView2.loadFromConfig([
                "adUnits": [
                 ["auId": "000000000006f450", "kv": ["version": ["X"]]
                 ]

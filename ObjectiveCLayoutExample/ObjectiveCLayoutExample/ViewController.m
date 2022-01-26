@@ -43,7 +43,7 @@
         @"useCookies": @false
     };
     [self.adView enableDebug:YES];
-    bool configResult = [self.adView loadAd:config completionHandler:self adnSdkHandler:nil];
+    bool configResult = [self.adView loadFromConfig:config completionHandler:self adnSdkHandler:nil];
     if (!configResult) {
         NSLog(@"Something is wrong with the config, check the logs");
     }

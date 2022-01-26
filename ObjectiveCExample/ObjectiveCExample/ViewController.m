@@ -81,21 +81,14 @@
     [self.adView enableDebug:YES];
     NSString *sessionId = [[NSUUID UUID] UUIDString];
     
-    NSString* adId = @"000000000006f450";
-    
-    NSDictionary* config = @{
-        @"adUnits" : @[
-                @{
-                    @"auId":adId, @"auH":@200, @"kv": @{@"version" : @[@"6s"]}
-                }
-        ],
-        @"useCookies": @false,
-        @"userId": globalUserId,
-        @"sessionId": sessionId,
-        @"consentString": @"some consent string"
-    };
-
-    bool configResult = [self.adView loadAd:config completionHandler:self adnSdkHandler:nil];
+    AdRequest *adRequest = [[AdRequest alloc] init:@"000000000006f450"];
+    [adRequest height:@"480"];
+    [adRequest useCookies:true];
+    [adRequest userId:globalUserId];
+    [adRequest sessionId:sessionId];
+    [adRequest consentString:@"some consent string"];
+    [adRequest keyValue:@"version" :@"6s"];
+    bool configResult = [self.adView loadAd:adRequest completionHandler:self adnSdkHandler:nil];
     if (!configResult) {
         NSLog(@"Something is wrong with the config, check the logs");
     }

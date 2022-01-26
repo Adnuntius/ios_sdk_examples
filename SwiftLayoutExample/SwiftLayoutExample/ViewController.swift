@@ -41,7 +41,7 @@ class ViewController: UIViewController, AdLoadCompletionHandler {
     private func loadFromConfig() {
         adView.enableDebug(true)
         
-        let configResult = adView.loadAd([
+        let configResult = adView.loadFromConfig([
               "adUnits": [
                     ["auId": "000000000006f450", "auW": 200, "kv": ["version": ["6s"]]
                 ]

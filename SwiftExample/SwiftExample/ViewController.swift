@@ -81,21 +81,14 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
         let globalUserId = UserDefaults.standard.string(forKey: "globalUserId")!
         let sessionId = UUID().uuidString
         print("The global user id is \(globalUserId)")
-        let config = [
-            "userId": globalUserId,
-            "sessionId": sessionId,
-            "adUnits": [
-                   [
-                    //"auId": "000000000006f450", "auW": 200, "kv": [["version": "3"]]
-                    "auId": "000000000006f450"  , "kv": ["version": ["interstitial2"]]
-                   ]
-            ],
-            "useCookies": false//,
-            //"lpl": "7pmy5r9rj62fyhjm",
-            //"lpc": "60n8zsv29kx9mmty"
-        ] as [String : Any]
+        let adRequest = AdRequest("000000000006f450")
+        adRequest.sessionId(sessionId)
+        adRequest.userId(globalUserId)
+        //adRequest.livePreview("7pmy5r9rj62fyhjm", "60n8zsv29kx9mmty")
+        adRequest.keyValue("version", "interstitial2")
+        adRequest.useCookies(false)
         
-        let configStatus = adView.loadAd(config, completionHandler: self, adnSdkHandler: self)
+        let configStatus = adView.loadAd(adRequest, completionHandler: self, adnSdkHandler: self)
         if (!configStatus) {
             print("Check the logs, config is wrong")
         }
