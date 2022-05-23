@@ -15,7 +15,10 @@ class NewsTableViewController: UITableViewController, AdLoadCompletionHandler {
 
     fileprivate var rssItems: [(title: String, description: String, pubDate: String)]?
     fileprivate var cellStates: [CellState]?
-
+    fileprivate var adView1: AdnuntiusAdWebView?
+    fileprivate var adView2: AdnuntiusAdWebView?
+    fileprivate var adRequest1: AdRequest?
+    fileprivate var adRequest2: AdRequest?
     fileprivate var adViews: [AdnuntiusAdWebView] = [AdnuntiusAdWebView]()
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,34 +38,55 @@ class NewsTableViewController: UITableViewController, AdLoadCompletionHandler {
             }
         }
 
-        let adView1 = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 200))
-        let configCheck = adView1.loadAd([
-               "adUnits": [
-                ["auId": "000000000006f450", "kv": ["version": ["6s"]]
-                ]
-            ],
-            "useCookies": false
-            ], completionHandler: self)
+        adView1 = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 200))
+        adView1!.enableDebug(true)
+        adRequest1 = AdRequest("00000000000432e3")
+        adRequest1!.keyValue("isolate", "ipl-app-test")
+        adRequest1!.width("10000")
+        adRequest1!.height("10000")
+        adViews.append(adView1!)
+        
+        adView2 = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 200))
+        adView2!.enableDebug(true)
+        adRequest2 = AdRequest("00000000000432e3")
+        adRequest2!.keyValue("isolate", "ipl-app-test")
+        adRequest2!.width("10000")
+        adRequest2!.height("10000")
+        adViews.append(adView2!)
+        
+        // Declare Alert message this is just so we can attach the browser debugger
+        promptToLoadAd()
+    }
+    
+    private func promptToLoadAd() {
+        let dialogMessage = UIAlertController(title: "Confirm", message: "Do you want to release the Ads?", preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            print("Ok button tapped")
+            self.loadFromConfig()
+        })
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+            print("Cancel button tapped")
+        }
+        
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
+        
+        self.present(dialogMessage, animated: true, completion: nil)
+    }
+
+    private func loadFromConfig() {
+        let configCheck = adView1!.loadAd(adRequest1!, completionHandler: self)
         if !configCheck {
             print("What did you do, you broke the ad - check the logs")
         }
-        adViews.append(adView1)
-        
-        let adView2 = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 200))
-        let config2Check = adView2.loadAd([
-               "adUnits": [
-                ["auId": "000000000006f450", "kv": ["version": ["X"]]
-                ]
-            ],
-            "useCookies": false
-            ], completionHandler: self)
-        
+        let config2Check = adView2!.loadAd(adRequest2!, completionHandler: self)
         if !config2Check {
             print("What did you do, you broke the ad - check the logs")
         }
-        adViews.append(adView2)
     }
-
+    
     func onNoAdResponse(_ view: AdnuntiusAdWebView) {
         print("No ad returned")
     }

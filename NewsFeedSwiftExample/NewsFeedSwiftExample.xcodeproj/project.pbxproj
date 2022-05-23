@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		195033821E470739009E6F1C /* FeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195033811E470739009E6F1C /* FeedParser.swift */; };
-		26C0F85A266721C700A49F39 /* AdnuntiusSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263988CE2667007900D93907 /* AdnuntiusSDK.xcframework */; };
-		26C0F85B266721C700A49F39 /* AdnuntiusSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 263988CE2667007900D93907 /* AdnuntiusSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26F2757B283390F8007A2318 /* AdnuntiusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F27578283390AA007A2318 /* AdnuntiusSDK.framework */; };
+		26F2757C283390F8007A2318 /* AdnuntiusSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26F27578283390AA007A2318 /* AdnuntiusSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F46F13CF1A8E0A6E00EEB477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F13CE1A8E0A6E00EEB477 /* AppDelegate.swift */; };
 		F46F13D41A8E0A6E00EEB477 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46F13D21A8E0A6E00EEB477 /* Main.storyboard */; };
 		F46F13D61A8E0A6E00EEB477 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46F13D51A8E0A6E00EEB477 /* Images.xcassets */; };
@@ -18,6 +18,23 @@
 		F46F13F11A8E11BA00EEB477 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F13F01A8E11BA00EEB477 /* NewsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		26F27577283390AA007A2318 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26F27570283390AA007A2318 /* AdnuntiusSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 395193D821345ABE008F961C;
+			remoteInfo = AdnuntiusSDK;
+		};
+		26F27579283390AA007A2318 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26F27570283390AA007A2318 /* AdnuntiusSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 26366F38270D49A4002B3576;
+			remoteInfo = AdnuntiusSDKTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		26C0F85C266721C700A49F39 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -25,7 +42,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				26C0F85B266721C700A49F39 /* AdnuntiusSDK.xcframework in Embed Frameworks */,
+				26F2757C283390F8007A2318 /* AdnuntiusSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -34,7 +51,7 @@
 
 /* Begin PBXFileReference section */
 		195033811E470739009E6F1C /* FeedParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
-		263988CE2667007900D93907 /* AdnuntiusSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AdnuntiusSDK.xcframework; path = Carthage/Build/AdnuntiusSDK.xcframework; sourceTree = "<group>"; };
+		26F27570283390AA007A2318 /* AdnuntiusSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AdnuntiusSDK.xcodeproj; path = ../../ios_sdk/AdnuntiusSDK.xcodeproj; sourceTree = "<group>"; };
 		F46F13C91A8E0A6E00EEB477 /* NewsFeedSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFeedSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46F13CD1A8E0A6E00EEB477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F46F13CE1A8E0A6E00EEB477 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26C0F85A266721C700A49F39 /* AdnuntiusSDK.xcframework in Frameworks */,
+				26F2757B283390F8007A2318 /* AdnuntiusSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,10 +92,19 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		26F27571283390AA007A2318 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26F27578283390AA007A2318 /* AdnuntiusSDK.framework */,
+				26F2757A283390AA007A2318 /* AdnuntiusSDKTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A7C8FF7D22E005B400EBDF3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				263988CE2667007900D93907 /* AdnuntiusSDK.xcframework */,
+				26F27570283390AA007A2318 /* AdnuntiusSDK.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,12 +196,35 @@
 			mainGroup = F46F13C01A8E0A6E00EEB477;
 			productRefGroup = F46F13CA1A8E0A6E00EEB477 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 26F27571283390AA007A2318 /* Products */;
+					ProjectRef = 26F27570283390AA007A2318 /* AdnuntiusSDK.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F46F13C81A8E0A6E00EEB477 /* NewsFeedSwiftExample */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		26F27578283390AA007A2318 /* AdnuntiusSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AdnuntiusSDK.framework;
+			remoteRef = 26F27577283390AA007A2318 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		26F2757A283390AA007A2318 /* AdnuntiusSDKTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AdnuntiusSDKTests.xctest;
+			remoteRef = 26F27579283390AA007A2318 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F46F13C71A8E0A6E00EEB477 /* Resources */ = {
@@ -324,8 +373,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -341,10 +389,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/NewsFeedSwiftExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Adnuntius.NewsFeedSwiftExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -364,10 +409,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/NewsFeedSwiftExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Adnuntius.NewsFeedSwiftExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
