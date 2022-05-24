@@ -1,14 +1,15 @@
 #!/bin/bash
 
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd -P)"
+PARENT_DIR=$(dirname $CURRENT_DIR)
 
+version=$(cat $PARENT_DIR/ios_sdk/AdnuntiusSDK/AdnuntiusSDK.swift | grep -o "version = \".*\"" | awk '{print $3}' | tr -d '"')
 dirs=(ObjectiveCExample	SwiftLayoutExample NewsFeedSwiftExample	ObjectiveCLayoutExample	SwiftExample)
 
-if [ -z "$1" ]; then
+if [ -z "$version" ]; then
 	echo "Version is required"
 	exit 1
 fi
-version=$1
 
 pushd $CURRENT_DIR > /dev/null
 
