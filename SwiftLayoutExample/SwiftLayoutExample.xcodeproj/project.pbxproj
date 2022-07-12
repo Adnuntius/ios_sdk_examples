@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26C0F85426671C9000A49F39 /* AdnuntiusSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263988BF2666FA3800D93907 /* AdnuntiusSDK.xcframework */; };
-		26C0F85526671C9000A49F39 /* AdnuntiusSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 263988BF2666FA3800D93907 /* AdnuntiusSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26715A43287D204700551BEA /* AdnuntiusSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 26715A42287D204700551BEA /* AdnuntiusSDK */; };
 		39AE9A2622C969D90082841E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AE9A2522C969D90082841E /* AppDelegate.swift */; };
 		39AE9A2822C969D90082841E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AE9A2722C969D90082841E /* ViewController.swift */; };
 		39AE9A2B22C969D90082841E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39AE9A2922C969D90082841E /* Main.storyboard */; };
@@ -22,7 +21,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				26C0F85526671C9000A49F39 /* AdnuntiusSDK.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -30,7 +28,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		263988BF2666FA3800D93907 /* AdnuntiusSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AdnuntiusSDK.xcframework; path = Carthage/Build/AdnuntiusSDK.xcframework; sourceTree = "<group>"; };
 		39AE9A2222C969D90082841E /* SwiftLayoutExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLayoutExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39AE9A2522C969D90082841E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39AE9A2722C969D90082841E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26C0F85426671C9000A49F39 /* AdnuntiusSDK.xcframework in Frameworks */,
+				26715A43287D204700551BEA /* AdnuntiusSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +80,6 @@
 		A7C8FF7722DFFF3B00EBDF3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				263988BF2666FA3800D93907 /* AdnuntiusSDK.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -105,6 +101,9 @@
 			dependencies = (
 			);
 			name = SwiftLayoutExample;
+			packageProductDependencies = (
+				26715A42287D204700551BEA /* AdnuntiusSDK */,
+			);
 			productName = Example3;
 			productReference = 39AE9A2222C969D90082841E /* SwiftLayoutExample.app */;
 			productType = "com.apple.product-type.application";
@@ -133,6 +132,9 @@
 				Base,
 			);
 			mainGroup = 39AE9A1922C969D90082841E;
+			packageReferences = (
+				26715A41287D204700551BEA /* XCRemoteSwiftPackageReference "ios_sdk" */,
+			);
 			productRefGroup = 39AE9A2322C969D90082841E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -364,6 +366,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		26715A41287D204700551BEA /* XCRemoteSwiftPackageReference "ios_sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Adnuntius/ios_sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 1.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		26715A42287D204700551BEA /* AdnuntiusSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26715A41287D204700551BEA /* XCRemoteSwiftPackageReference "ios_sdk" */;
+			productName = AdnuntiusSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 39AE9A1A22C969D90082841E /* Project object */;
 }

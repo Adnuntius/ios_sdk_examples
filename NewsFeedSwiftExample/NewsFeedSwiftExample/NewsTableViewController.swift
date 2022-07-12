@@ -40,18 +40,14 @@ class NewsTableViewController: UITableViewController, AdLoadCompletionHandler {
 
         adView1 = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 200))
         adView1!.enableDebug(true)
-        adRequest1 = AdRequest("00000000000432e3")
-        adRequest1!.keyValue("isolate", "ipl-app-test")
-        adRequest1!.width("10000")
-        adRequest1!.height("10000")
+        adRequest1 = AdRequest("000000000006f450")
+        adRequest1!.keyValue("version", "6s")
         adViews.append(adView1!)
         
         adView2 = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 200))
         adView2!.enableDebug(true)
-        adRequest2 = AdRequest("00000000000432e3")
-        adRequest2!.keyValue("isolate", "ipl-app-test")
-        adRequest2!.width("10000")
-        adRequest2!.height("10000")
+        adRequest2 = AdRequest("000000000006f450")
+        adRequest2!.keyValue("version", "X")
         adViews.append(adView2!)
         
         // Declare Alert message this is just so we can attach the browser debugger
