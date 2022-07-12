@@ -14,7 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
       
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = ViewController() // Your initial view controller.
+        //window.rootViewController = LotsOfAdsViewController() // Your initial view controller.
+        window.rootViewController = ViewController()
         window.makeKeyAndVisible()
         self.window = window
     }

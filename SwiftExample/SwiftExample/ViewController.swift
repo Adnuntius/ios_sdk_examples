@@ -9,7 +9,7 @@ import AdnuntiusSDK
 import WebKit
 import UIKit
 
-class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler, AdClientHandler {
+class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
     private var labelAbove: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 100))
     private var adView: AdnuntiusAdWebView = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 100, width: 320, height: 275))
     private var labelBelow: UILabel = UILabel(frame: CGRect(x: 0, y: 375, width: 320, height: 125))
@@ -98,28 +98,6 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler, 
         if (!configStatus) {
             print("Check the logs, config is wrong")
         }
-
-//        let adClient: AdClient = AdClient()
-//        let UA = (adView.value(forKey: "userAgent") as? String)!
-//        print("UA is \(UA)")
-//        adClient.setUserAgent("\(UA)")
-//        //adClient.setEnv(AdnuntiusEnvironment.localhost)
-//        adClient.adRequest(adRequest, self)
-    }
-    
-    func onComplete(_ baseUrl: String, _ html: String?) {
-        if (html != nil) {
-            DispatchQueue.main.async {
-                self.adView.loadHTMLString(html!, baseURL: URL(string: baseUrl))
-            }
-            print("DEBUG: \(baseUrl): \(html!)")
-        } else {
-            print("WTF")
-        }
-    }
-    
-    func onFailure(_ msg: String) {
-        print("FAILURE: \(msg)")
     }
     
     func onNoAdResponse(_ view: AdnuntiusAdWebView) {

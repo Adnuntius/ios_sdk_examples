@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		265F6E18283B99BC009B86F9 /* AdnuntiusSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265F6E16283B99B6009B86F9 /* AdnuntiusSDK.xcframework */; };
 		265F6E19283B99BC009B86F9 /* AdnuntiusSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 265F6E16283B99B6009B86F9 /* AdnuntiusSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26CBD037287D125C002DFE41 /* LotsOfAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CBD036287D125C002DFE41 /* LotsOfAdsViewController.swift */; };
 		A7D3B161257DBBCA0019F3EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3B160257DBBCA0019F3EE /* AppDelegate.swift */; };
 		A7D3B163257DBBCA0019F3EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3B162257DBBCA0019F3EE /* SceneDelegate.swift */; };
 		A7D3B165257DBBCA0019F3EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3B164257DBBCA0019F3EE /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		265F6E16283B99B6009B86F9 /* AdnuntiusSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AdnuntiusSDK.xcframework; path = Carthage/Build/AdnuntiusSDK.xcframework; sourceTree = "<group>"; };
+		26CBD036287D125C002DFE41 /* LotsOfAdsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotsOfAdsViewController.swift; sourceTree = "<group>"; };
 		A7D3B15D257DBBCA0019F3EE /* SwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D3B160257DBBCA0019F3EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D3B162257DBBCA0019F3EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		A7D3B15F257DBBCA0019F3EE /* SwiftExample */ = {
 			isa = PBXGroup;
 			children = (
+				26CBD036287D125C002DFE41 /* LotsOfAdsViewController.swift */,
 				A7D3B160257DBBCA0019F3EE /* AppDelegate.swift */,
 				A7D3B162257DBBCA0019F3EE /* SceneDelegate.swift */,
 				A7D3B164257DBBCA0019F3EE /* ViewController.swift */,
@@ -155,6 +158,7 @@
 			files = (
 				A7D3B165257DBBCA0019F3EE /* ViewController.swift in Sources */,
 				A7D3B161257DBBCA0019F3EE /* AppDelegate.swift in Sources */,
+				26CBD037287D125C002DFE41 /* LotsOfAdsViewController.swift in Sources */,
 				A7D3B163257DBBCA0019F3EE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
