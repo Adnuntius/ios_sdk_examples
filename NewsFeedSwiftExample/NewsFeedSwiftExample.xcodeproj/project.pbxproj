@@ -153,7 +153,6 @@
 				TargetAttributes = {
 					F46F13C81A8E0A6E00EEB477 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 5S8YF53WP2;
 						LastSwiftMigration = 0900;
 					};
 				};
@@ -336,7 +335,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5S8YF53WP2;
+				DEVELOPMENT_TEAM = X2YM83V7A7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -359,7 +358,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5S8YF53WP2;
+				DEVELOPMENT_TEAM = X2YM83V7A7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

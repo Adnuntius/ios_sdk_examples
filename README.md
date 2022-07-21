@@ -22,6 +22,11 @@ A swift example similiar to SwiftLayoutExample, but without using a storyboard
 
 A swift example of loading ads into a news feed app
 
+## AddSwiftui Example - SwiftUI example contributed by Alexander Larsen
+
+Imported from https://github.com/AlexaderDNT/adnuntiusSwiftui with permission
+from  Alexander Larsen <alexander.larsen@dnt.no>
+
 # License
 
 This project uses the Apache 2 License.  Refer to the LICENSE file.
