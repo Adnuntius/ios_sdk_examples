@@ -372,8 +372,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Adnuntius/ios_sdk";
 			requirement = {
-				kind = exactVersion;
-				version = 1.9.0;
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.9.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

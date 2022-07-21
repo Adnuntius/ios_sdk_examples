@@ -137,7 +137,6 @@
 			mainGroup = 92F777F82874222600CE5F79;
 			packageReferences = (
 				26CF1BAE2875919900CC571E /* XCRemoteSwiftPackageReference "ios_sdk" */,
-				26AB449C2876C9D1007FED1A /* XCRemoteSwiftPackageReference "ios_sdk" */,
 			);
 			productRefGroup = 92F778022874222600CE5F79 /* Products */;
 			projectDirPath = "";
@@ -370,20 +369,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		26AB449C2876C9D1007FED1A /* XCRemoteSwiftPackageReference "ios_sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Adnuntius/ios_sdk";
-			requirement = {
-				branch = jp_provide_width_height_more_reliably;
-				kind = branch;
-			};
-		};
 		26CF1BAE2875919900CC571E /* XCRemoteSwiftPackageReference "ios_sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Adnuntius/ios_sdk";
 			requirement = {
-				branch = jp_provide_width_height_more_reliably;
-				kind = branch;
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.9.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

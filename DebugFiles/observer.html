@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="first" style="background-color:green">
+  <ul>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+  </ul>
+</div>
+
+<div style="background-color:pink">
+  <ul>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+  </ul>
+</div>
+
+<div id="second" style="background-color:orange">
+  <ul>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+  </ul>
+</div>
+
+<div style="background-color:pink">
+  <ul>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+  </ul>
+</div>
+
+<div id="third" style="background-color:blue">
+  <ul>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+    <li>loren ipsum</li>
+  </ul>
+</div>
+
+</body>
+</html>
+<script>
+  function printRectangle(name, rec) {
+    console.log(name + ": {x=" + rec.x + ",y=" + rec.y + ",width=" + rec.width + ",height=" + rec.height + ",top=" + rec.top + ",right=" + rec.right + ",bottom=" + rec.bottom + ",left=" + rec.left + "}")
+  }
+  let callback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        console.log("entry.target: " + entry.target.id)
+        //printRectangle("entry.boundingClientRect", entry.boundingClientRect)
+        console.log("entry.intersectionRatio: " + entry.intersectionRatio)
+        //printRectangle("entry.intersectionRect", entry.boundingClientRect)
+        console.log("entry.isIntersecting: " + entry.isIntersecting)
+        //printRectangle("entry.rootBounds", entry.rootBounds)
+
+        //console.log("entry.time: " + entry.time)
+
+        // Each entry describes an intersection change for one observed
+        // target element:
+        //   entry.boundingClientRect
+        //   entry.intersectionRatio
+        //   entry.intersectionRect
+        //   entry.isIntersecting
+        //   entry.rootBounds
+        //   entry.target
+        //   entry.time
+      }
+    });
+  };
+
+
+  var viewObserver = new window.IntersectionObserver(callback, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0
+  });
+  let first = document.getElementById('first');
+  let second = document.getElementById('second');
+  let third = document.getElementById('third');
+  viewObserver.observe(first);
+  viewObserver.observe(second);
+  viewObserver.observe(third);
+</script>

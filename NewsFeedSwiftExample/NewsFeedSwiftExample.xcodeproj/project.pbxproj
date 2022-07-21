@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		195033821E470739009E6F1C /* FeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195033811E470739009E6F1C /* FeedParser.swift */; };
-		26715A48287D20B900551BEA /* AdnuntiusSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 26715A47287D20B900551BEA /* AdnuntiusSDK */; };
+		266276A4288A1A0300EB5B5D /* AdnuntiusSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 266276A3288A1A0300EB5B5D /* AdnuntiusSDK */; };
 		F46F13CF1A8E0A6E00EEB477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F13CE1A8E0A6E00EEB477 /* AppDelegate.swift */; };
 		F46F13D41A8E0A6E00EEB477 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46F13D21A8E0A6E00EEB477 /* Main.storyboard */; };
 		F46F13D61A8E0A6E00EEB477 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46F13D51A8E0A6E00EEB477 /* Images.xcassets */; };
@@ -47,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26715A48287D20B900551BEA /* AdnuntiusSDK in Frameworks */,
+				266276A4288A1A0300EB5B5D /* AdnuntiusSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +72,13 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		262AB63728891DA200DD4202 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		A7C8FF7D22E005B400EBDF3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +89,7 @@
 		F46F13C01A8E0A6E00EEB477 = {
 			isa = PBXGroup;
 			children = (
+				262AB63728891DA200DD4202 /* Packages */,
 				F46F13CB1A8E0A6E00EEB477 /* NewsFeedSwiftExample */,
 				F46F13CA1A8E0A6E00EEB477 /* Products */,
 				A7C8FF7D22E005B400EBDF3A /* Frameworks */,
@@ -135,7 +143,7 @@
 			);
 			name = NewsFeedSwiftExample;
 			packageProductDependencies = (
-				26715A47287D20B900551BEA /* AdnuntiusSDK */,
+				266276A3288A1A0300EB5B5D /* AdnuntiusSDK */,
 			);
 			productName = SimpleRSSReader;
 			productReference = F46F13C91A8E0A6E00EEB477 /* NewsFeedSwiftExample.app */;
@@ -335,6 +343,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_ASSET_PATHS = ../../ios_sdk;
 				DEVELOPMENT_TEAM = X2YM83V7A7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -358,6 +367,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_ASSET_PATHS = ../../ios_sdk;
 				DEVELOPMENT_TEAM = X2YM83V7A7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -405,14 +415,14 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Adnuntius/ios_sdk";
 			requirement = {
-				kind = exactVersion;
-				version = 1.9.0;
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.9.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		26715A47287D20B900551BEA /* AdnuntiusSDK */ = {
+		266276A3288A1A0300EB5B5D /* AdnuntiusSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 26715A46287D20B900551BEA /* XCRemoteSwiftPackageReference "ios_sdk" */;
 			productName = AdnuntiusSDK;

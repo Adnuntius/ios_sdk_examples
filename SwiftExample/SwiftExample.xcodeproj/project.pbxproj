@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26715A3D287D1D0D00551BEA /* AdnuntiusSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 26715A3C287D1D0D00551BEA /* AdnuntiusSDK */; };
-		26715A40287D202300551BEA /* AdnuntiusSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 26715A3F287D202300551BEA /* AdnuntiusSDK */; };
+		262AB63C28892F5000DD4202 /* AdnuntiusSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 262AB63B28892F5000DD4202 /* AdnuntiusSDK */; };
+		262AB641288A165A00DD4202 /* AdnuntiusSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 262AB640288A165A00DD4202 /* AdnuntiusSDK */; };
 		26CBD037287D125C002DFE41 /* LotsOfAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CBD036287D125C002DFE41 /* LotsOfAdsViewController.swift */; };
 		A7D3B161257DBBCA0019F3EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3B160257DBBCA0019F3EE /* AppDelegate.swift */; };
 		A7D3B163257DBBCA0019F3EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3B162257DBBCA0019F3EE /* SceneDelegate.swift */; };
@@ -42,8 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26715A3D287D1D0D00551BEA /* AdnuntiusSDK in Frameworks */,
-				26715A40287D202300551BEA /* AdnuntiusSDK in Frameworks */,
+				262AB63C28892F5000DD4202 /* AdnuntiusSDK in Frameworks */,
+				262AB641288A165A00DD4202 /* AdnuntiusSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,8 +104,8 @@
 			);
 			name = SwiftExample;
 			packageProductDependencies = (
-				26715A3C287D1D0D00551BEA /* AdnuntiusSDK */,
-				26715A3F287D202300551BEA /* AdnuntiusSDK */,
+				262AB63B28892F5000DD4202 /* AdnuntiusSDK */,
+				262AB640288A165A00DD4202 /* AdnuntiusSDK */,
 			);
 			productName = SwiftSample;
 			productReference = A7D3B15D257DBBCA0019F3EE /* SwiftExample.app */;
@@ -135,8 +135,7 @@
 			);
 			mainGroup = A7D3B154257DBBC90019F3EE;
 			packageReferences = (
-				26715A3B287D1D0D00551BEA /* XCRemoteSwiftPackageReference "ios_sdk" */,
-				26715A3E287D202300551BEA /* XCRemoteSwiftPackageReference "ios_sdk" */,
+				262AB63F288A165A00DD4202 /* XCRemoteSwiftPackageReference "ios_sdk" */,
 			);
 			productRefGroup = A7D3B15E257DBBCA0019F3EE /* Products */;
 			projectDirPath = "";
@@ -293,7 +292,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5S8YF53WP2;
+				DEVELOPMENT_TEAM = X2YM83V7A7;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SwiftExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -312,7 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5S8YF53WP2;
+				DEVELOPMENT_TEAM = X2YM83V7A7;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SwiftExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -350,33 +349,24 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		26715A3B287D1D0D00551BEA /* XCRemoteSwiftPackageReference "ios_sdk" */ = {
+		262AB63F288A165A00DD4202 /* XCRemoteSwiftPackageReference "ios_sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Adnuntius/ios_sdk";
 			requirement = {
-				kind = exactVersion;
-				version = 1.9.0;
-			};
-		};
-		26715A3E287D202300551BEA /* XCRemoteSwiftPackageReference "ios_sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Adnuntius/ios_sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.9.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		26715A3C287D1D0D00551BEA /* AdnuntiusSDK */ = {
+		262AB63B28892F5000DD4202 /* AdnuntiusSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 26715A3B287D1D0D00551BEA /* XCRemoteSwiftPackageReference "ios_sdk" */;
 			productName = AdnuntiusSDK;
 		};
-		26715A3F287D202300551BEA /* AdnuntiusSDK */ = {
+		262AB640288A165A00DD4202 /* AdnuntiusSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 26715A3E287D202300551BEA /* XCRemoteSwiftPackageReference "ios_sdk" */;
+			package = 262AB63F288A165A00DD4202 /* XCRemoteSwiftPackageReference "ios_sdk" */;
 			productName = AdnuntiusSDK;
 		};
 /* End XCSwiftPackageProductDependency section */

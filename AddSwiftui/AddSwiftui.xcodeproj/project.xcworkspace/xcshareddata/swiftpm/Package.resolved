@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Adnuntius/ios_sdk",
       "state" : {
-        "branch" : "jp_provide_width_height_more_reliably",
-        "revision" : "317ab80b1db0e8e09f81bc4164ccd062f470e0e4"
+        "revision" : "db81793da64db86bd80a38dd459d6fe72640f862",
+        "version" : "1.9.1"
       }
     }
   ],

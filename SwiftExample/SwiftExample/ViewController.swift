@@ -12,6 +12,7 @@ import UIKit
 class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
     private var labelAbove: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 100))
     private var adView: AdnuntiusAdWebView = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 100, width: 320, height: 275))
+    //private var adView2: AdnuntiusAdWebView = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 1024, width: 320, height: 275))
     private var labelBelow: UILabel = UILabel(frame: CGRect(x: 0, y: 375, width: 320, height: 125))
     
     override func viewDidLoad() {
@@ -33,6 +34,8 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
         self.adView.scrollView.backgroundColor = .purple
         self.adView.isOpaque = false
         self.adView.scrollView.isOpaque = false
+        self.adView.scrollView.isScrollEnabled = false
+        
         self.view.addSubview(adView)
         
         self.view.backgroundColor = .blue
@@ -54,6 +57,10 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
             print("Ok button tapped")
             self.loadFromConfig()
+            //var urlRequest: URLRequest = URLRequest(url: URL(string: "http://localhost:9999/observer.html")!)
+            //self.adView.load(urlRequest)
+            //var urlRequest2: URLRequest = URLRequest(url: URL(string: "http://localhost:9999/observer2.html")!)
+            //self.adView2.load(urlRequest2)
         })
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
@@ -71,7 +78,7 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
 
         // Declare Alert message this is just so we can attach the browser debugger
         promptToLoadAd()
-
+        
         //self.loadFromConfig()
     }
  
@@ -94,10 +101,7 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
         //adRequest.livePreview("7pmy5r9rj62fyhjm", "60n8zsv29kx9mmty")
         adRequest.useCookies(false)
         
-        let configStatus = adView.loadAd(adRequest, completionHandler: self, adnSdkHandler: self)
-        if (!configStatus) {
-            print("Check the logs, config is wrong")
-        }
+        adView.loadAd(adRequest, completionHandler: self, adnSdkHandler: self)
     }
     
     func onNoAdResponse(_ view: AdnuntiusAdWebView) {
@@ -116,6 +120,7 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
         var frame = self.adView.frame
         if (height > 0) {
             frame.size.height = CGFloat(height)
+            frame.size.width = CGFloat(width)
         }
         self.adView.frame = frame
     }
