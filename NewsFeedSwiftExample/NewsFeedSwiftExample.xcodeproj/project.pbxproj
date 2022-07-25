@@ -32,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		195033811E470739009E6F1C /* FeedParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
+		266276AE288F69FF00EB5B5D /* ios_sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ios_sdk; path = ../../ios_sdk; sourceTree = "<group>"; };
 		F46F13C91A8E0A6E00EEB477 /* NewsFeedSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFeedSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46F13CD1A8E0A6E00EEB477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F46F13CE1A8E0A6E00EEB477 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		262AB63728891DA200DD4202 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				266276AE288F69FF00EB5B5D /* ios_sdk */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
