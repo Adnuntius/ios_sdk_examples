@@ -10,47 +10,95 @@ import WebKit
 import UIKit
 
 class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
-    private var labelAbove: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 100))
-    private var adView: AdnuntiusAdWebView = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 100, width: 320, height: 275))
-    //private var adView2: AdnuntiusAdWebView = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 1024, width: 320, height: 275))
-    private var labelBelow: UILabel = UILabel(frame: CGRect(x: 0, y: 375, width: 320, height: 125))
+    private let globalUserId = UserDefaults.standard.string(forKey: "globalUserId")!
+    private let sessionId = UUID().uuidString
+    
+    private var adView: AdnuntiusAdWebView = {
+        let view = AdnuntiusAdWebView()
+        view.logger.id = "adView"
+        view.logger.debug = false
+        view.heightAnchor.constraint(equalToConstant: 160).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.gray
+        view.scrollView.isOpaque = false
+        view.isOpaque = false
+        return view
+    }()
+    
+    private var adView2: AdnuntiusAdWebView = {
+        let view = AdnuntiusAdWebView()
+        view.logger.id = "adView2"
+        view.logger.debug = false
+        view.heightAnchor.constraint(equalToConstant: 160).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.blue
+        view.scrollView.isOpaque = false
+        view.isOpaque = false
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        labelAbove.textAlignment = .center
-        labelAbove.backgroundColor = .brown
-        labelAbove.text = "I'm above"
-        labelAbove.textColor = .white
-        self.view.addSubview(labelAbove)
-        
-        labelBelow.textAlignment = .center
-        labelBelow.backgroundColor = .green
-        labelBelow.text = "I'm below"
-        labelBelow.textColor = .white
-        self.view.addSubview(labelBelow)
 
-        self.adView.backgroundColor = .orange
-        self.adView.scrollView.backgroundColor = .purple
-        self.adView.isOpaque = false
-        self.adView.scrollView.isOpaque = false
-        self.adView.scrollView.isScrollEnabled = false
+        let scrollView: UIScrollView = {
+            let view = UIScrollView()
+            view.translatesAutoresizingMaskIntoConstraints = false
+            return view
+        }()
+        scrollView.delegate = self
         
-        self.view.addSubview(adView)
+        let scrollStackViewContainer: UIStackView = {
+            let view = UIStackView()
+            view.axis = .vertical
+            view.spacing = 0
+            view.translatesAutoresizingMaskIntoConstraints = false
+            return view
+        }()
         
-        self.view.backgroundColor = .blue
-        self.view.setNeedsLayout()
+        let labelAbove: UILabel = {
+            let label = UILabel()
+            label.heightAnchor.constraint(equalToConstant: 125).isActive = true
+            label.backgroundColor = UIColor.green
+            label.text = "I'm above"
+            return label
+        }()
+        
+        let labelBetween: UILabel = {
+            let label = UILabel()
+            label.heightAnchor.constraint(equalToConstant: 250).isActive = true
+            label.backgroundColor = UIColor.brown
+            label.text = "I'm Between"
+            return label
+        }()
+        
+        let margins = view.layoutMarginsGuide
+        view.addSubview(scrollView)
+        scrollView.addSubview(scrollStackViewContainer)
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
+        scrollStackViewContainer.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+        scrollStackViewContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        scrollStackViewContainer.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        scrollStackViewContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        scrollStackViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        
+        scrollStackViewContainer.addArrangedSubview(labelAbove)
+        scrollStackViewContainer.addArrangedSubview(adView)
+        scrollStackViewContainer.addArrangedSubview(labelBetween)
+        scrollStackViewContainer.addArrangedSubview(adView2)
         
         let defaults = UserDefaults.standard
         defaults.register(defaults:["globalUserId" : ""])
-        
+
         let globalUserId = defaults.string(forKey: "globalUserId")!
         if globalUserId.isEmpty {
             print("No user id found, generating and saving a new one")
             defaults.set(UUID().uuidString, forKey: "globalUserId")
         }
     }
-    
+
     private func promptToLoadAd() {
         let dialogMessage = UIAlertController(title: "Confirm", message: "Do you want to release the Ads?", preferredStyle: .alert)
         
@@ -83,11 +131,8 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
     }
  
     private func loadFromConfig() {
-        adView.enableDebug(true)
         
-        let globalUserId = UserDefaults.standard.string(forKey: "globalUserId")!
-        let sessionId = UUID().uuidString
-        print("The global user id is \(globalUserId)")
+        //print("The global user id is \(globalUserId)")
 
         //adView.setEnv(AdnuntiusEnvironment.localhost)
         //let adRequest = AdRequest("00000000000001d9")
@@ -102,6 +147,16 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
         adRequest.useCookies(false)
         
         adView.loadAd(adRequest, completionHandler: self, adnSdkHandler: self)
+        
+        let adRequest2 = AdRequest("000000000006f450")
+        adRequest2.keyValue("version", "X")
+        adRequest2.height("10000")
+        adRequest2.width("10000")
+        adRequest2.sessionId(sessionId)
+        adRequest2.userId(globalUserId)
+        //adRequest.livePreview("7pmy5r9rj62fyhjm", "60n8zsv29kx9mmty")
+        adRequest2.useCookies(false)
+        adView2.loadAd(adRequest2, completionHandler: self, adnSdkHandler: self)
     }
     
     func onNoAdResponse(_ view: AdnuntiusAdWebView) {
@@ -115,14 +170,7 @@ class ViewController: UIViewController, AdLoadCompletionHandler, AdnSdkHandler {
     }
 
     func onAdResponse(_ view: AdnuntiusAdWebView, _ width: Int, _ height: Int) {
-        print("onAdResponse: width: \(width), height: \(height)")
-        
-        var frame = self.adView.frame
-        if (height > 0) {
-            frame.size.height = CGFloat(height)
-            frame.size.width = CGFloat(width)
-        }
-        self.adView.frame = frame
+        //print("onAdResponse \(view.logger.id): width: \(width), height: \(height)")
     }
     
     func onClose(_ view: AdnuntiusAdWebView) {
