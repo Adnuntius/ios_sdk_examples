@@ -8,7 +8,7 @@
 #import <WebKit/WebKit.h>
 #import <AdnuntiusSDK/AdnuntiusSDK-Swift.h>
 
-@interface ViewController : UIViewController <AdLoadCompletionHandler, AdnSdkHandler>
+@interface ViewController : UIViewController <LoadAdHandler>
 
 @property (strong, nonatomic) AdnuntiusAdWebView *adView;
 

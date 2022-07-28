@@ -32,7 +32,6 @@
 
 /* Begin PBXFileReference section */
 		195033811E470739009E6F1C /* FeedParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
-		266276AE288F69FF00EB5B5D /* ios_sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ios_sdk; path = ../../ios_sdk; sourceTree = "<group>"; };
 		F46F13C91A8E0A6E00EEB477 /* NewsFeedSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFeedSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46F13CD1A8E0A6E00EEB477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F46F13CE1A8E0A6E00EEB477 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,14 +72,6 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		262AB63728891DA200DD4202 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				266276AE288F69FF00EB5B5D /* ios_sdk */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		A7C8FF7D22E005B400EBDF3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,7 +82,6 @@
 		F46F13C01A8E0A6E00EEB477 = {
 			isa = PBXGroup;
 			children = (
-				262AB63728891DA200DD4202 /* Packages */,
 				F46F13CB1A8E0A6E00EEB477 /* NewsFeedSwiftExample */,
 				F46F13CA1A8E0A6E00EEB477 /* Products */,
 				A7C8FF7D22E005B400EBDF3A /* Frameworks */,
@@ -418,7 +408,7 @@
 			repositoryURL = "https://github.com/Adnuntius/ios_sdk";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 1.9.0;
+				minimumVersion = 1.10.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

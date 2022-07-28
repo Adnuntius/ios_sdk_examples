@@ -78,6 +78,14 @@ class NewsTableViewController: UITableViewController, LoadAdHandler {
     
     func onAdResponse(_ view: AdnuntiusAdWebView, _ response: AdResponseInfo) {
         print("Ad Returned: height: \(response.definedHeight)")
+        
+        view.updateView(tableView)
+    }
+
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        for adView in adViews {
+            adView.updateView(scrollView)
+        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

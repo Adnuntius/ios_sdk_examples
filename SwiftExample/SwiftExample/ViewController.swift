@@ -9,7 +9,7 @@ import AdnuntiusSDK
 import WebKit
 import UIKit
 
-class ViewController: UIViewController, LoadAdHandler {
+class ViewController: UIViewController, LoadAdHandler, UIScrollViewDelegate {
     private var scrollView: UIScrollView?
     
     private var adView: AdnuntiusAdWebView = {
@@ -134,5 +134,12 @@ class ViewController: UIViewController, LoadAdHandler {
     
     func onAdResponse(_ view: AdnuntiusAdWebView, _ response: AdResponseInfo) {
         print("onAdResponse: \(response)")
+        
+        view.updateView(scrollView!)
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        adView.updateView(scrollView)
+        adView2.updateView(scrollView)
     }
 }

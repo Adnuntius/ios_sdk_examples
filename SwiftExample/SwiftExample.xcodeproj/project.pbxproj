@@ -28,7 +28,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		266276A6288E133F00EB5B5D /* ios_sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ios_sdk; path = ../../ios_sdk; sourceTree = "<group>"; };
 		26CBD036287D125C002DFE41 /* LotsOfAdsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotsOfAdsViewController.swift; sourceTree = "<group>"; };
 		A7D3B15D257DBBCA0019F3EE /* SwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D3B160257DBBCA0019F3EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +51,6 @@
 		266276A5288E133F00EB5B5D /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				266276A6288E133F00EB5B5D /* ios_sdk */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -361,7 +359,7 @@
 			repositoryURL = "https://github.com/Adnuntius/ios_sdk";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 1.9.0;
+				minimumVersion = 1.10.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

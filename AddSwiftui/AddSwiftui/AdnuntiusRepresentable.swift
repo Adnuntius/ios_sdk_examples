@@ -25,8 +25,8 @@ struct AdnuntiusRepresentable: UIViewRepresentable {
     }
 
     func makeUIView(context: Context) -> AdnuntiusAdWebView {
-        adnuntiusAdWebView.enableDebug(true)
-        adnuntiusAdWebView.loadAd(getRequest(), coordinator)
+        adnuntiusAdWebView.logger.debug = true
+        adnuntiusAdWebView.loadAd(getRequest(), coordinator, delayViewEvents: false)
         return adnuntiusAdWebView
     }
 
@@ -49,13 +49,13 @@ struct AdnuntiusRepresentable: UIViewRepresentable {
 class AdnuntiusCoordinator: NSObject, LoadAdHandler {
     var parent: AdnuntiusRepresentable?
 
-    func onAdResponse(_ response: AdResponseInfo) {
+    func onAdResponse(_ view: AdnuntiusAdWebView, _ response: AdResponseInfo) {
         print("onAdResponse: \(response)")
         parent?.width = CGFloat(response.definedWidth)
         parent?.height = CGFloat(response.definedHeight+20)
     }
     
-    func onAdResize(_ response: AdResponseInfo) {
+    func onAdResize(_ view: AdnuntiusAdWebView, _ response: AdResponseInfo) {
         print("onAdResize: \(response)")
     }
 }

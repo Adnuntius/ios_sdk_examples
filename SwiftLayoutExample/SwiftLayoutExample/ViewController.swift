@@ -8,7 +8,7 @@
 import WebKit
 import AdnuntiusSDK
 
-class ViewController: UIViewController, AdLoadCompletionHandler {
+class ViewController: UIViewController, LoadAdHandler {
     @IBOutlet weak var adView: AdnuntiusAdWebView!
     
     fileprivate func promptToLoadAd() {
@@ -39,34 +39,28 @@ class ViewController: UIViewController, AdLoadCompletionHandler {
     }
     
     private func loadFromConfig() {
-        adView.enableDebug(true)
+        adView.logger.debug = true
         
         let adRequest = AdRequest("000000000006f450")
         adRequest.keyValue("version", "6s")
-        adRequest.width("200")
-
-        let configResult = adView.loadAd(adRequest, completionHandler: self)
-        if !configResult {
-            print("Config is wrong, check the log")
-        }
+        adView.loadAd(adRequest, self, delayViewEvents: false)
     }
     
     func onNoAdResponse(_ view: AdnuntiusAdWebView) {
         print("No Ad Found!")
-        self.adView.isHidden = true
+        view.isHidden = true
     }
     
     func onFailure(_ view: AdnuntiusAdWebView, _ message: String) {
-        view.loadHTMLString("<h1>Error is: \(message)</h1>",
-        baseURL: nil)
+        view.loadHTMLString("<h1>Error is: \(message)</h1>", baseURL: nil)
     }
     
-    func onAdResponse(_ view: AdnuntiusAdWebView, _ width: Int, _ height: Int) {
-        print("onAdResponse: width: \(width), height: \(height)")
-        var frame = self.adView.frame
-        if (height > 0) {
-            frame.size.height = CGFloat(height)
+    func onAdResponse(_ view: AdnuntiusAdWebView, _ response: AdResponseInfo) {
+        print("onAdResponse: width: \(response.definedWidth), height: \(response.definedHeight)")
+        var frame = view.frame
+        if (response.definedHeight > 0) {
+            frame.size.height = CGFloat(response.definedHeight)
         }
-        self.adView.frame = frame
+        view.frame = frame
     }
 }
