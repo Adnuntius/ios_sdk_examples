@@ -72,13 +72,6 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		262AB63728891DA200DD4202 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		A7C8FF7D22E005B400EBDF3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,7 +82,6 @@
 		F46F13C01A8E0A6E00EEB477 = {
 			isa = PBXGroup;
 			children = (
-				262AB63728891DA200DD4202 /* Packages */,
 				F46F13CB1A8E0A6E00EEB477 /* NewsFeedSwiftExample */,
 				F46F13CA1A8E0A6E00EEB477 /* Products */,
 				A7C8FF7D22E005B400EBDF3A /* Frameworks */,
@@ -416,7 +408,7 @@
 			repositoryURL = "https://github.com/Adnuntius/ios_sdk";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 1.9.0;
+				minimumVersion = 1.10.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -114,26 +114,26 @@ class LotsOfAdsViewController: UIViewController, LoadAdHandler {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        adView.enableDebug(true)
+        adView.logger.debug = true
         loadNewAd()
     }
     
-    func onNoAdResponse() {
+    func onNoAdResponse(_ view: AdnuntiusAdWebView) {
         print("No Ad Found!")
         self.adView.isHidden = true
     }
     
-    func onFailure(_ message: String) {
+    func onFailure(_ view: AdnuntiusAdWebView, _ message: String) {
         DispatchQueue.main.async {
             self.adView.loadHTMLString("<h1>Error is: \(message)</h1>", baseURL: nil)
         }
     }
 
-    func onAdResize(_ response: AdResponseInfo) {
+    func onAdResize(_ view: AdnuntiusAdWebView, _ response: AdResponseInfo) {
         print("onAdResize: \(response)")
     }
     
-    func onAdResponse(_ response: AdResponseInfo) {
+    func onAdResponse(_ view: AdnuntiusAdWebView, _ response: AdResponseInfo) {
         print("onAdResponse: \(response)")
         
         var frame = self.adView.frame
@@ -144,7 +144,7 @@ class LotsOfAdsViewController: UIViewController, LoadAdHandler {
         confirmAd(response)
     }
     
-    func onLayoutCloseView() {
+    func onLayoutCloseView(_ view: AdnuntiusAdWebView) {
         print("Here is close")
         UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
     }

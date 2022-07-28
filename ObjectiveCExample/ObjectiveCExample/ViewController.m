@@ -82,16 +82,12 @@
     NSString *sessionId = [[NSUUID UUID] UUIDString];
     
     AdRequest *adRequest = [[AdRequest alloc] init:@"000000000006f450"];
-    [adRequest height:@"480"];
     [adRequest useCookies:true];
     [adRequest userId:globalUserId];
     [adRequest sessionId:sessionId];
     [adRequest consentString:@"some consent string"];
     [adRequest keyValue:@"version" :@"6s"];
-    bool configResult = [self.adView loadAd:adRequest completionHandler:self adnSdkHandler:nil];
-    if (!configResult) {
-        NSLog(@"Something is wrong with the config, check the logs");
-    }
+    [self.adView loadAd:adRequest :self delayViewEvents:NO];
 }
 
 - (void)onNoAdResponse:(AdnuntiusAdWebView * _Nonnull)view {
@@ -104,18 +100,14 @@
     self.adView.hidden = true;
 }
 
-- (void)onAdResponse:(AdnuntiusAdWebView * _Nonnull)view :(NSInteger)width :(NSInteger)height {
-    NSLog(@"ad found, height: %1ld, width: %1ld", height, width);
+- (void)onAdResponse:(AdnuntiusAdWebView * _Nonnull)view :(AdResponseInfo * _Nonnull)response {
+    NSLog(@"ad found, height: %1ld, width: %1ld", response.definedHeight, response.definedWidth);
     
-    if (height > 0) {
-        CGRect frame = self.adView.frame;
-        frame.size.height = height;
-        self.adView.frame = frame;
+    if (response.definedHeight > 0) {
+        CGRect frame = view.frame;
+        frame.size.height = response.definedHeight;
+        view.frame = frame;
     }
-}
-
-- (void)onClose:(AdnuntiusAdWebView * _Nonnull)view {
-    NSLog(@"No on close implemented");
 }
 
 @end

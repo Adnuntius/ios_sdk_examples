@@ -7,20 +7,14 @@
 import WebKit
 import AdnuntiusSDK
 
-class NewsTableViewController: UITableViewController, AdLoadCompletionHandler {
-    
-    
+class NewsTableViewController: UITableViewController, LoadAdHandler {
     fileprivate let feedParser = FeedParser()
     fileprivate let feedURL = "http://www.apple.com/main/rss/hotnews/hotnews.rss"
 
     fileprivate var rssItems: [(title: String, description: String, pubDate: String)]?
     fileprivate var cellStates: [CellState]?
-    fileprivate var adView1: AdnuntiusAdWebView?
-    fileprivate var adView2: AdnuntiusAdWebView?
-    fileprivate var adRequest1: AdRequest?
-    fileprivate var adRequest2: AdRequest?
     fileprivate var adViews: [AdnuntiusAdWebView] = [AdnuntiusAdWebView]()
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -37,23 +31,18 @@ class NewsTableViewController: UITableViewController, AdLoadCompletionHandler {
                 self?.tableView.reloadSections(IndexSet(integer: 0), with: .none)
             }
         }
-
-        adView1 = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 200))
-        adView1!.enableDebug(true)
-        adRequest1 = AdRequest("000000000006f450")
-        adRequest1!.keyValue("version", "6s")
-        adViews.append(adView1!)
         
-        adView2 = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 10, width: self.tableView.frame.width, height: 200))
-        adView2!.enableDebug(true)
-        adRequest2 = AdRequest("000000000006f450")
-        adRequest2!.keyValue("version", "X")
-        adViews.append(adView2!)
-        
-        // Declare Alert message this is just so we can attach the browser debugger
-        promptToLoadAd()
+        for i in 1 ... 3 {
+            let adView = AdnuntiusAdWebView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: 160))
+            adView.logger.debug = true
+            adView.logger.id = "adView\(i)"
+            adView.scrollView.isScrollEnabled = false
+            self.adViews.append(adView)
+        }
+        //promptToLoadAd()
+        loadFromConfig()
     }
-    
+
     private func promptToLoadAd() {
         let dialogMessage = UIAlertController(title: "Confirm", message: "Do you want to release the Ads?", preferredStyle: .alert)
         
@@ -71,39 +60,38 @@ class NewsTableViewController: UITableViewController, AdLoadCompletionHandler {
         
         self.present(dialogMessage, animated: true, completion: nil)
     }
-
+    
     private func loadFromConfig() {
-        let configCheck = adView1!.loadAd(adRequest1!, completionHandler: self)
-        if !configCheck {
-            print("What did you do, you broke the ad - check the logs")
-        }
-        let config2Check = adView2!.loadAd(adRequest2!, completionHandler: self)
-        if !config2Check {
-            print("What did you do, you broke the ad - check the logs")
+        for i in 1 ... 3 {
+            let adView = self.adViews[i - 1]
+            let request = AdRequest("000000000006f450")
+            if i % 3 == 0 {
+                request.keyValue("version", "6s")
+            } else if i % 2 == 0 {
+                request.keyValue("version", "X")
+            } else if i % 1 == 0 {
+                request.keyValue("version", "unspecified")
+            }
+            adView.loadAd(request, self)
         }
     }
     
-    func onNoAdResponse(_ view: AdnuntiusAdWebView) {
-        print("No ad returned")
-    }
-    
-    func onAdResponse(_ view: AdnuntiusAdWebView, _ width: Int, _ height: Int) {
-        print("Ad Returned: height: \(height)")
-        if height > 0 {
-            var frame = view.frame
-            frame.size.height = CGFloat(height)
-            view.frame = frame
-        }
+    func onAdResponse(_ view: AdnuntiusAdWebView, _ response: AdResponseInfo) {
+        print("Ad Returned: height: \(response.definedHeight)")
+        
+        view.updateView(tableView)
     }
 
-    func onFailure(_ view: AdnuntiusAdWebView, _ message: String) {
-        print("Failure: \(message)")
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        for adView in adViews {
+            adView.updateView(scrollView)
+        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let rssItems = rssItems else {
           return 0
@@ -113,49 +101,60 @@ class NewsTableViewController: UITableViewController, AdLoadCompletionHandler {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if(indexPath.row % 7 == 0) {
-            //print(self.adViews[0].frame.height)
-            return self.adViews[indexPath.row % 2 == 0 ? 0 : 1].frame.height
+            let idx = getAdIdx(idx: indexPath.row)
+            if idx >= 0 {
+                let adView = self.adViews[idx]
+                return adView.frame.height
+            }
         }
         return UITableView.automaticDimension
     }
 
+    private func getAdIdx(idx: Int) -> Int {
+        if idx == 0 {
+            return 0
+        } else if idx == 7 {
+            return 1
+        } else if idx == 14 {
+            return 2
+        } else {
+            return -1
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    // Adnuntius injector
-    if (indexPath.row % 7 == 0) {
-        let cell = UITableViewCell()
-        let webView = self.adViews[indexPath.row % 2 == 0 ? 0 : 1]
-        webView.scrollView.isScrollEnabled = false
-        
-        cell.clipsToBounds = true
-        cell.addSubview(webView)
-        cell.sizeToFit()
-        cell.layoutSubviews()
+        if (indexPath.row % 7 == 0) {
+            let idx = getAdIdx(idx: indexPath.row)
+            if idx >= 0 {
+                let adView = self.adViews[idx]
+                let cell = UITableViewCell()
+                cell.clipsToBounds = true
+                cell.addSubview(adView)
+                cell.sizeToFit()
+                cell.layoutSubviews()
+                return cell
+            }
+        }
 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! NewsTableViewCell
+        if let item = rssItems?[indexPath.row] {
+            (cell.titleLabel.text, cell.descriptionLabel.text, cell.dateLabel.text) = (item.title, item.description, item.pubDate)
+
+            if let cellState = cellStates?[indexPath.row] {
+                cell.descriptionLabel.numberOfLines = cellState == .expanded ? 0: 4
+            }
+        }
         return cell
     }
 
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! NewsTableViewCell
-
-    if let item = rssItems?[indexPath.row] {
-        (cell.titleLabel.text, cell.descriptionLabel.text, cell.dateLabel.text) = (item.title, item.description, item.pubDate)
-
-        if let cellState = cellStates?[indexPath.row] {
-            cell.descriptionLabel.numberOfLines = cellState == .expanded ? 0: 4
-        }
-    }
-
-return cell
-}
-
-    // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-
-        let cell = tableView.cellForRow(at: indexPath) as! NewsTableViewCell
-
-        tableView.beginUpdates()
-        cell.descriptionLabel.numberOfLines = cell.descriptionLabel.numberOfLines == 4 ? 0 : 4
-        cellStates?[indexPath.row] = cell.descriptionLabel.numberOfLines == 4 ? .collapsed : .expanded
-        tableView.endUpdates()
+        if (indexPath.row % 7 != 0) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            let cell = tableView.cellForRow(at: indexPath) as! NewsTableViewCell
+            tableView.beginUpdates()
+            cell.descriptionLabel.numberOfLines = cell.descriptionLabel.numberOfLines == 4 ? 0 : 4
+            cellStates?[indexPath.row] = cell.descriptionLabel.numberOfLines == 4 ? .collapsed : .expanded
+            tableView.endUpdates()
+        }
     }
 }

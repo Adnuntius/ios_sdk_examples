@@ -48,9 +48,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		267DD5022892230E0013999D /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		39AE9A1922C969D90082841E = {
 			isa = PBXGroup;
 			children = (
+				267DD5022892230E0013999D /* Packages */,
 				39AE9A2422C969D90082841E /* SwiftLayoutExample */,
 				39AE9A2322C969D90082841E /* Products */,
 				A7C8FF7722DFFF3B00EBDF3A /* Frameworks */,
@@ -373,7 +381,7 @@
 			repositoryURL = "https://github.com/Adnuntius/ios_sdk";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 1.9.0;
+				minimumVersion = 1.10.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
