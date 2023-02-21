@@ -19,6 +19,7 @@ struct ContentView: View {
         HStack {
             TextField("Enter url", text: $model.urlString)
                                 .textFieldStyle(.roundedBorder)
+                                .disableAutocorrection(true)
             Button("Go") {
                 model.loadUrl()
             }
