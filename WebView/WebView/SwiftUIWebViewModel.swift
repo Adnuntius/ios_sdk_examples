@@ -9,7 +9,7 @@ import Foundation
 import WebKit
 
 final class SwiftUIWebViewModel: NSObject, ObservableObject, WKScriptMessageHandler {
-    @Published var urlString = "https://github.com/Adnuntius"
+    @Published var urlString = ""
     
     let webView: WKWebView
     override init() {
@@ -21,9 +21,11 @@ final class SwiftUIWebViewModel: NSObject, ObservableObject, WKScriptMessageHand
     }
     
     func loadUrl() {
-        guard let url = URL(string: urlString) else {
+        let theUrl = urlString.range(of: "^[a-z]+://", options:.regularExpression) != nil ? urlString : ("https://" + urlString)
+        guard let url = URL(string: theUrl) else {
             return
         }
+        
         webView.load(URLRequest(url: url))
     }
     

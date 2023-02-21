@@ -20,6 +20,7 @@ struct ContentView: View {
             TextField("Enter url", text: $model.urlString)
                                 .textFieldStyle(.roundedBorder)
                                 .disableAutocorrection(true)
+                                .autocapitalization(.none)
             Button("Go") {
                 model.loadUrl()
             }
