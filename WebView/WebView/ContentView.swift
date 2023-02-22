@@ -13,9 +13,6 @@ struct ContentView: View {
     @StateObject private var model = SwiftUIWebViewModel()
 
     var body: some View {
-        VStack {
-            SwiftUIWebView(webView: model.webView)
-        }
         HStack {
             TextField("Enter url", text: $model.urlString)
                                 .textFieldStyle(.roundedBorder)
@@ -26,6 +23,9 @@ struct ContentView: View {
             }
         }
         .padding()
+        VStack {
+            SwiftUIWebView(webView: model.webView)
+        }
     }
 }
 
