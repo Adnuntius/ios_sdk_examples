@@ -15,6 +15,8 @@ final class SwiftUIWebViewModel: NSObject, ObservableObject, WKScriptMessageHand
     override init() {
         webView = WKWebView(frame: .zero)
         super.init()
+        
+        // this is some noop hooks to fool a customer website into doing their app mode
         webView.configuration.userContentController.add(self, name: "sizeNotification")
         webView.configuration.userContentController.add(self, name: "getFontSize")
         webView.configuration.userContentController.add(self, name: "setFontSize")
