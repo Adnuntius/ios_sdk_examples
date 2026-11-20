@@ -1,14 +1,15 @@
 {
+  "originHash" : "abb7a56f01ed9b6d4303d0969dfd80430c8c36559c0538767af460bcd16119cb",
   "pins" : [
     {
       "identity" : "ios_sdk",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Adnuntius/ios_sdk",
       "state" : {
-        "revision" : "0c62b45521e6d945aece5b3e814397e1095bdc14",
-        "version" : "1.10.3"
+        "revision" : "35bc237b915fe318b00215e19aea9fd5e8f63ffe",
+        "version" : "1.11.0"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

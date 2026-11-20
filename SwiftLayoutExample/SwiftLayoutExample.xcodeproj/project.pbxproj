@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		264F322D30AFD48300D89E77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264F322C30AFD48300D89E77 /* SceneDelegate.swift */; };
 		26715A43287D204700551BEA /* AdnuntiusSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 26715A42287D204700551BEA /* AdnuntiusSDK */; };
 		39AE9A2622C969D90082841E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AE9A2522C969D90082841E /* AppDelegate.swift */; };
 		39AE9A2822C969D90082841E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AE9A2722C969D90082841E /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		264F322C30AFD48300D89E77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		39AE9A2222C969D90082841E /* SwiftLayoutExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLayoutExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39AE9A2522C969D90082841E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39AE9A2722C969D90082841E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				39AE9A2922C969D90082841E /* Main.storyboard */,
 				39AE9A2C22C969D90082841E /* Assets.xcassets */,
 				39AE9A3122C969D90082841E /* Info.plist */,
+				264F322C30AFD48300D89E77 /* SceneDelegate.swift */,
 			);
 			path = SwiftLayoutExample;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			files = (
 				39AE9A2822C969D90082841E /* ViewController.swift in Sources */,
 				39AE9A2622C969D90082841E /* AppDelegate.swift in Sources */,
+				264F322D30AFD48300D89E77 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +321,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SwiftLayoutExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,7 +344,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SwiftLayoutExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

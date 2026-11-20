@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		26285ED726DCB4750061AC7B /* AdnuntiusSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26285ED626DCB4750061AC7B /* AdnuntiusSDK.xcframework */; };
+		264ED75D30AFDFA60032D4C7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 264ED75C30AFDFA60032D4C7 /* SceneDelegate.m */; };
 		A4BC38BC1EAAA7C400AE68B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BC38BB1EAAA7C400AE68B4 /* main.m */; };
 		A4BC38BF1EAAA7C400AE68B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BC38BE1EAAA7C400AE68B4 /* AppDelegate.m */; };
 		A4BC38C21EAAA7C400AE68B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BC38C11EAAA7C400AE68B4 /* ViewController.m */; };
@@ -31,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		26285ED626DCB4750061AC7B /* AdnuntiusSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AdnuntiusSDK.xcframework; path = Carthage/Build/AdnuntiusSDK.xcframework; sourceTree = "<group>"; };
+		264ED75B30AFDFA60032D4C7 /* SceneDelegate.h */ = {isa = PBXFileReference; path = SceneDelegate.h; sourceTree = "<group>"; };
+		264ED75C30AFDFA60032D4C7 /* SceneDelegate.m */ = {isa = PBXFileReference; path = SceneDelegate.m; sourceTree = "<group>"; };
 		A4BC38B71EAAA7C400AE68B4 /* ObjectiveCLayoutExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCLayoutExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BC38BB1EAAA7C400AE68B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A4BC38BD1EAAA7C400AE68B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 				A4BC38CE1EAAA7C500AE68B4 /* Info.plist */,
 				A4BC38C61EAAA7C500AE68B4 /* WebViewDemo.xcdatamodeld */,
 				A4BC38BA1EAAA7C400AE68B4 /* Supporting Files */,
+				264ED75B30AFDFA60032D4C7 /* SceneDelegate.h */,
+				264ED75C30AFDFA60032D4C7 /* SceneDelegate.m */,
 			);
 			path = ObjectiveCLayoutExample;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			files = (
 				A4BC38C21EAAA7C400AE68B4 /* ViewController.m in Sources */,
 				A4BC38BF1EAAA7C400AE68B4 /* AppDelegate.m in Sources */,
+				264ED75D30AFDFA60032D4C7 /* SceneDelegate.m in Sources */,
 				A4BC38C81EAAA7C500AE68B4 /* WebViewDemo.xcdatamodeld in Sources */,
 				A4BC38BC1EAAA7C400AE68B4 /* main.m in Sources */,
 			);
@@ -247,7 +253,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -299,7 +305,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,7 +323,7 @@
 					"${PROJECT_DIR}",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ObjectiveCLayoutExample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,7 +343,7 @@
 					"${PROJECT_DIR}",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ObjectiveCLayoutExample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		195033821E470739009E6F1C /* FeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195033811E470739009E6F1C /* FeedParser.swift */; };
+		264F322B30AFD2F000D89E77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264F322A30AFD2F000D89E77 /* SceneDelegate.swift */; };
 		266276A4288A1A0300EB5B5D /* AdnuntiusSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 266276A3288A1A0300EB5B5D /* AdnuntiusSDK */; };
 		F46F13CF1A8E0A6E00EEB477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F13CE1A8E0A6E00EEB477 /* AppDelegate.swift */; };
 		F46F13D41A8E0A6E00EEB477 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46F13D21A8E0A6E00EEB477 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		195033811E470739009E6F1C /* FeedParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
+		264F322A30AFD2F000D89E77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F46F13C91A8E0A6E00EEB477 /* NewsFeedSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFeedSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46F13CD1A8E0A6E00EEB477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F46F13CE1A8E0A6E00EEB477 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				F46F13D51A8E0A6E00EEB477 /* Images.xcassets */,
 				F46F13CC1A8E0A6E00EEB477 /* Supporting Files */,
 				195033811E470739009E6F1C /* FeedParser.swift */,
+				264F322A30AFD2F000D89E77 /* SceneDelegate.swift */,
 			);
 			path = NewsFeedSwiftExample;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264F322B30AFD2F000D89E77 /* SceneDelegate.swift in Sources */,
 				195033821E470739009E6F1C /* FeedParser.swift in Sources */,
 				F46F13EF1A8E11A900EEB477 /* NewsTableViewController.swift in Sources */,
 				F46F13CF1A8E0A6E00EEB477 /* AppDelegate.swift in Sources */,
@@ -342,7 +346,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/NewsFeedSwiftExample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -366,7 +370,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/NewsFeedSwiftExample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,7 +412,7 @@
 			repositoryURL = "https://github.com/Adnuntius/ios_sdk";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 1.10.0;
+				minimumVersion = 1.11.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
